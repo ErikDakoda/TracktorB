@@ -21,6 +21,10 @@ const {
 
 const flowRight = require("lodash/flowRight");
 const debug = require("debug")("vn:next");
+const withTM = require('next-transpile-modules')([
+  '@mui/material',
+  '@apollo/client',
+]); // pass the modules you would like to see transpiled
 
 // @see https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration
 module.exports = (phase, { defaultConfig }) => {
@@ -61,6 +65,7 @@ module.exports = (phase, { defaultConfig }) => {
     withPkgInfo,
     withMDX,
     withI18n,
+    withTM,
     // add other wrappers here
   ])(extendedConfig);
 

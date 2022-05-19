@@ -16,6 +16,7 @@
     "noUnusedParameters": false,
     "paths": {
       "@vulcanjs/*": ["packages/@vulcanjs/*", "node_modules/@vulcanjs/*"],
+      "@crema/*": ["packages/@crema/*", "node_modules/@crema/*"],
       "~/*": ["src/*"]
     },
     "resolveJsonModule": true,

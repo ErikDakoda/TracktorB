@@ -6,17 +6,21 @@ import { appWithTranslation } from "next-i18next";
 
 // Comment if you don't need Material UI
 import { createEmotionCache } from "@vulcanjs/next-mui";
-import { MuiThemeProvider } from "~/components/providers";
+import CremaMuiThemeProvider from "~/components/providers/CremaMuiThemeProvider";
+import { MuiThemeProvider } from "~/components/providers/";
 
-import { VulcanCurrentUserProvider } from "@vulcanjs/react-ui"
 import Head from "next/head";
+import {
+    VulcanComponentsProvider,
+    VulcanCurrentUserProvider,
+} from "@vulcanjs/react-ui";
 
 import debug from "debug";
-import AppLayout from "~/components/layout/AppLayout";
+import AppLayout from "@crema/core/AppLayout/horHeaderFixed/index";
 const debugPerf = debug("vns:perf");
 // @see https://nextjs.org/docs/advanced-features/measuring-performance
 export function reportWebVitals(metric) {
-  debugPerf(metric); // The metric object ({ id, name, startTime, value, label }) is logged to the console
+    debugPerf(metric); // The metric object ({ id, name, startTime, value, label }) is logged to the console
 }
 
 import { ApolloProvider } from "@apollo/client";
@@ -34,86 +38,88 @@ const clientSideEmotionCache = createEmotionCache();
 // Doc says to use "ReactNode" as the return type at the time of writing (09/2021) but then that fails appWithTranslation
 // , ReactElement seems more appropriate
 type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactElement; //ReactNode;
+    getLayout?: (page: ReactElement) => ReactElement; //ReactNode;
 };
 
 export interface VNAppProps extends AppProps {
-  Component: NextPageWithLayout;
-  emotionCache: EmotionCache;
+    Component: NextPageWithLayout;
+    emotionCache: EmotionCache;
 }
 
 const Favicons = () => (
-  <>
-    {/* Favicon created using https://realfavicongenerator.net/ */}
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-touch-icon.png"
-    ></link>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon-32x32.png"
-    ></link>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon-16x16.png"
-    ></link>
-    <link rel="manifest" href="/site.webmanifest"></link>
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"></link>
-    <meta name="msapplication-TileColor" content="#da532c"></meta>
-    <meta name="theme-color" content="#ffffff"></meta>
-  </>
+    <>
+        {/* Favicon created using https://realfavicongenerator.net/ */}
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        ></link>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        ></link>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        ></link>
+        <link rel="manifest" href="/site.webmanifest"></link>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"></link>
+        <meta name="msapplication-TileColor" content="#da532c"></meta>
+        <meta name="theme-color" content="#ffffff"></meta>
+    </>
 );
 
 function VNApp({
-  Component,
-  pageProps,
-  emotionCache = clientSideEmotionCache,
-}: VNAppProps) {
-  const apolloClient = useApollo(pageProps.initialApolloState, {
-    graphqlUri:
-      process.env.NEXT_PUBLIC_GRAPHQL_URI ??
-      "http://localhost:3000/api/graphql",
-    crossDomainGraphqlUri:
-      !!process.env.NEXT_PUBLIC_CROSS_DOMAIN_GRAPHQL_URI || false,
-  }); // you can also easily setup ApolloProvider on a per-page basis
-  // Use the layout defined at the page level, if available
-  // @see https://nextjs.org/docs/basic-features/layouts
-  const user = useUser();
+                   Component,
+                   pageProps,
+                   emotionCache = clientSideEmotionCache,
+               }: VNAppProps) {
+    const apolloClient = useApollo(pageProps.initialApolloState, {
+        graphqlUri:
+            process.env.NEXT_PUBLIC_GRAPHQL_URI ??
+            "http://localhost:3000/api/graphql",
+        crossDomainGraphqlUri:
+            !!process.env.NEXT_PUBLIC_CROSS_DOMAIN_GRAPHQL_URI || false,
+    }); // you can also easily setup ApolloProvider on a per-page basis
+    // Use the layout defined at the page level, if available
+    // @see https://nextjs.org/docs/basic-features/layouts
+    const user = useUser();
 
-  const getLayout = Component.getLayout ?? ((page) => page);
-  return getLayout(
-    <CacheProvider value={emotionCache}>
-      <VulcanCurrentUserProvider
-        value={{
-          currentUser: user || null,
-          loading:
-            false /* TODO: we don't get the loading information from useUser yet */,
-        }}
-      >
-        <Head>
-          <title>Vulcan Next</title>
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width"
-          />
-          <Favicons />
-        </Head>
-        {/** Provide MUI theme but also mui utilities like CSS baseline, StyledEngineProvider... */}
-        <MuiThemeProvider>
-          <ApolloProvider client={apolloClient}>
-            <AppLayout>
-              <Component {...pageProps} />
-            </AppLayout>
-          </ApolloProvider>
-        </MuiThemeProvider>
-      </VulcanCurrentUserProvider>
-    </CacheProvider>
-  );
+    const getLayout = Component.getLayout ?? ((page) => page);
+    return getLayout(
+        <CacheProvider value={emotionCache}>
+            <VulcanCurrentUserProvider
+                value={{
+                    currentUser: user || null,
+                    loading:
+                        false /* TODO: we don't get the loading information from useUser yet */,
+                }}
+            >
+                <VulcanComponentsProvider>
+                    <Head>
+                        <title>Vulcan Next</title>
+                        <meta
+                            name="viewport"
+                            content="minimum-scale=1, initial-scale=1, width=device-width"
+                        />
+                        <Favicons />
+                    </Head>
+                    {/** Provide MUI theme but also mui utilities like CSS baseline, StyledEngineProvider... */}
+                    <CremaMuiThemeProvider pageProps={pageProps}>
+                        <ApolloProvider client={apolloClient}>
+                            <AppLayout>
+                                <Component {...pageProps} />
+                            </AppLayout>
+                        </ApolloProvider>
+                    </CremaMuiThemeProvider>
+                </VulcanComponentsProvider>
+            </VulcanCurrentUserProvider>
+        </CacheProvider>
+    );
 }
 
 export default appWithTranslation(VNApp);
