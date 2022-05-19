@@ -11,8 +11,8 @@ import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
 
 const UserInfo = ({color}) => {
-  const {logout} = useAuthMethod();
-  const {user} = useAuthUser();
+  const {logout} = {}; //useAuthMethod();
+  const {user} = {}; //useAuthUser();
   const history = useRouter();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -26,10 +26,10 @@ const UserInfo = ({color}) => {
   };
 
   const getUserAvatar = () => {
-    if (user.displayName) {
+    if (user?.displayName) {
       return user.displayName.charAt(0).toUpperCase();
     }
-    if (user.email) {
+    if (user?.email) {
       return user.email.charAt(0).toUpperCase();
     }
   };
@@ -48,7 +48,7 @@ const UserInfo = ({color}) => {
         className='user-info-view'
       >
         <Box sx={{py: 0.5}}>
-          {user.photoURL ? (
+          {user?.photoURL ? (
             <Avatar
               sx={{
                 height: 40,
@@ -56,7 +56,7 @@ const UserInfo = ({color}) => {
                 fontSize: 24,
                 backgroundColor: orange[500],
               }}
-              src={user.photoURL}
+              src={user?.photoURL}
             />
           ) : (
             <Avatar
@@ -98,7 +98,7 @@ const UserInfo = ({color}) => {
               }}
               component='span'
             >
-              {user.displayName ? user.displayName : 'Admin User '}
+              {user?.displayName ? user?.displayName : 'Admin User '}
             </Box>
             <Box
               sx={{

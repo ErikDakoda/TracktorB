@@ -4,9 +4,12 @@ import AppLoader from '@crema/core/AppLoader';
 
 const AppSuspense = (props) => {
   return (
-    <React.Suspense fallback={<AppLoader {...props.loadingProps} />}>
-      {props.children}
-    </React.Suspense>
+      //TODO: Re-enable
+      /*<React.Suspense fallback={<AppLoader {...props.loadingProps} />}>*/
+      <>
+        {props.children}
+      </>
+      /*</React.Suspense>*/
   );
 };
 

@@ -29,11 +29,11 @@ SearchWrapper.propTypes = {
 export const SearchInputBase = styled(InputBase)(({theme}) => ({
   fontWeight: Fonts.MEDIUM,
 
-  [`& .${InputBase.classes.root}`]: {
+  [`& .MuiInputBase-root`]: {
     color: 'inherit',
     width: '100%',
   },
-  [`& .${InputBase.classes.input}`]: {
+  [`& .MuiInputBase-input`]: {
     border: '0 none',
     backgroundColor: lighten(theme.palette.background.default, 0.25),
     color: theme.palette.text.primary,

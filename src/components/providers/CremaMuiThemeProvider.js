@@ -8,7 +8,6 @@ import {Provider} from "react-redux";
 import AppThemeProvider from "@crema/utility/AppThemeProvider";
 import AppStyleProvider from "@crema/utility/AppStyleProvider";
 import AppLocaleProvider from "@crema/utility/AppLocaleProvider";
-import AuthRoutes from '@crema/utility/AuthRoutes';
 import {useStore} from "@crema/redux/store"; // Client-side cache, shared for the whole session of the user in the browser.
 
 import "@crema/services";
