@@ -111,9 +111,11 @@ function VNApp({
                     {/** Provide MUI theme but also mui utilities like CSS baseline, StyledEngineProvider... */}
                     <CremaMuiThemeProvider pageProps={pageProps}>
                         <ApolloProvider client={apolloClient}>
+                            <div id="root">
                             <AppLayout>
                                 <Component {...pageProps} />
                             </AppLayout>
+                            </div>
                         </ApolloProvider>
                     </CremaMuiThemeProvider>
                 </VulcanComponentsProvider>
