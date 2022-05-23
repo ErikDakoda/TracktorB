@@ -1,3 +1,14 @@
+import { useVulcanCurrentUser } from "@vulcanjs/react-ui";
+
+export const useAuthUser = () => {
+  const { currentUser, loading } = useVulcanCurrentUser();
+  return {
+    isLoading: loading,
+    isAuthenticated: true,
+    user: currentUser,
+  };
+};
+
 // ForJWT Auth
 /*import { getUserFromJwtAuth } from "./helper/AuthHelper";
 import {

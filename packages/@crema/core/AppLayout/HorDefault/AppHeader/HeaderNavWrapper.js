@@ -1,6 +1,7 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
-import {Box, alpha} from '@mui/material';
+import {Box} from '@mui/material';
+import {alpha} from '@mui/material/styles';
 import {useSidebarContext} from '@crema/utility/AppContextProvider/SidebarContextProvider';
 
 const HeaderNavWrapper = ({children}) => {

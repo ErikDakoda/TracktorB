@@ -1,7 +1,8 @@
 import React from 'react';
 import orange from '@mui/material/colors/orange';
 import {useAuthMethod, useAuthUser} from '@crema/utility/AuthHooks';
-import {Box, alpha} from '@mui/material';
+import {Box} from '@mui/material';
+import {alpha} from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';

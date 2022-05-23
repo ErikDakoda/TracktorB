@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import {useDropzone} from 'react-dropzone';
-import {Box, darken, IconButton} from '@mui/material';
+import {Box, IconButton} from '@mui/material';
+import {styled, darken} from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import PropTypes from 'prop-types';
@@ -9,7 +10,6 @@ import {useIntl} from 'react-intl';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import {MessageType} from '@crema/services/db/apps/chat/connectionList';
 
-import {styled} from '@mui/material/styles';
 import {generateUniqueID} from '@crema/utility/Utils';
 
 const SendBtn = styled(IconButton)(({theme}) => {

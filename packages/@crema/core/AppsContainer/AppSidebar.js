@@ -2,7 +2,7 @@ import React from 'react';
 import Hidden from '@mui/material/Hidden';
 import Drawer from '@mui/material/Drawer';
 import Card from '@mui/material/Card';
-import {Box, drawerClasses, Slide} from '@mui/material';
+import {Box, Slide} from '@mui/material';
 import {useDispatch} from 'react-redux';
 import PropTypes from 'prop-types';
 import {onToggleAppDrawer} from '@crema/redux/actions';
@@ -26,7 +26,7 @@ const AppSidebar = (props) => {
             onClose={() => dispatch(onToggleAppDrawer())}
             sx={{
               position: 'absolute',
-              [`& .${drawerClasses.paper}`]: {
+              [`& .MuiDrawer-paper`]: {
                 width: 280,
                 '& .listItem': {
                   zIndex: 1305,

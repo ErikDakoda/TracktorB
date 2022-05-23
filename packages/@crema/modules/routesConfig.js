@@ -240,7 +240,7 @@ const routesConfig = [
   },
   {
     id: 'mui',
-    title: 'MUI Components',
+    title: 'Components',
     messageId: 'sidebar.mui',
     type: 'group',
     children: [
@@ -1017,7 +1017,7 @@ const routesConfig = [
   },
   {
     id: 'extra-pages',
-    title: 'Extra Pages',
+    title: 'Pages',
     messageId: 'sidebar.pages.extraPages',
     type: 'group',
     children: [

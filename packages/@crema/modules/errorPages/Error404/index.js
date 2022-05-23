@@ -7,7 +7,7 @@ import {Fonts} from '@crema/shared/constants/AppEnums';
 import {initialUrl} from '@crema/shared/constants/AppConst';
 import {AppAnimate} from '@crema';
 import IntlMessages from '@crema/utility/IntlMessages';
-import Logo from '../../../assets/icon/404.svg';
+import { Error404Icon } from '@crema/assets/icon/Error404Icon';
 import {useTheme} from '@mui/material/styles';
 import {useRouter} from 'next/router';
 
@@ -43,7 +43,7 @@ const Error404 = () => {
             },
           }}
         >
-          <Logo fill={theme.palette.primary.main} />
+          <Error404Icon color={theme.palette.primary.main} />
         </Box>
         <Box
           sx={{

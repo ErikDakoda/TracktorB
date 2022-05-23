@@ -1,5 +1,6 @@
 import React from 'react';
-import {Box, alpha} from '@mui/material';
+import {Box} from '@mui/material';
+import {alpha} from '@mui/material/styles';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import {useIntl} from 'react-intl';
 import AppCard from '@crema/core/AppCard';

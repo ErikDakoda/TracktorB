@@ -1,5 +1,6 @@
 import React from 'react';
-import {Box, alpha} from '@mui/material';
+import {Box} from '@mui/material';
+import {alpha} from '@mui/material/styles';
 import Slider from 'react-slick';
 import GridItem from '../../Products/ProductListing/ProductGrid/GridItem';
 import ecommerce from '@crema/services/db/ecommerce/ecommerceData';

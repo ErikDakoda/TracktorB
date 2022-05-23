@@ -9,10 +9,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
+import { Button } from "@mui/material";
+import Link from 'next/link';
+import { routes } from "~/lib/routes";
 
-const UserInfo = ({color}) => {
-  const {logout} = {}; //useAuthMethod();
-  const {user} = {}; //useAuthUser();
+const UserInfo = ({ color }) => {
+  const { logout } = {}; //useAuthMethod();
+  const { user } = useAuthUser();
   const history = useRouter();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -35,119 +38,134 @@ const UserInfo = ({color}) => {
   };
 
   return (
-    <>
-      <Box
-        onClick={handleClick}
-        sx={{
-          py: 3,
-          px: 3,
+    user
+      ?
+      <>
+        <Box
+          onClick={handleClick}
+          sx={{
+            py: 3,
+            px: 3,
           display: 'flex',
           alignItems: 'center',
           cursor: 'pointer',
-        }}
-        className='user-info-view'
-      >
-        <Box sx={{py: 0.5}}>
-          {user?.photoURL ? (
-            <Avatar
-              sx={{
-                height: 40,
-                width: 40,
-                fontSize: 24,
-                backgroundColor: orange[500],
-              }}
-              src={user?.photoURL}
-            />
-          ) : (
-            <Avatar
-              sx={{
-                height: 40,
-                width: 40,
-                fontSize: 24,
-                backgroundColor: orange[500],
-              }}
-            >
-              {getUserAvatar()}
-            </Avatar>
-          )}
-        </Box>
-        <Box
-          sx={{
-            width: {xs: 'calc(100% - 62px)', xl: 'calc(100% - 72px)'},
-            ml: 4,
-            color: color,
           }}
-          className='user-info'
+        className='user-info-view'
         >
+          <Box sx={{ py: 0.5 }}>
+            {user?.photoURL ? (
+              <Avatar
+                sx={{
+                  height: 40,
+                  width: 40,
+                  fontSize: 24,
+                  backgroundColor: orange[500]
+                }}
+                src={user?.photoURL}
+              />
+            ) : (
+              <Avatar
+                sx={{
+                  height: 40,
+                  width: 40,
+                  fontSize: 24,
+                  backgroundColor: orange[500]
+                }}
+              >
+                {getUserAvatar()}
+              </Avatar>
+            )}
+          </Box>
           <Box
             sx={{
+            width: {xs: 'calc(100% - 62px)', xl: 'calc(100% - 72px)'},
+              ml: 4,
+              color: color
+            }}
+          className='user-info'
+          >
+            <Box
+              sx={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-            }}
-          >
-            <Box
-              sx={{
-                mb: 0,
+              }}
+            >
+              <Box
+                sx={{
+                  mb: 0,
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 whiteSpace: 'nowrap',
-                fontSize: 16,
-                fontWeight: Fonts.MEDIUM,
+                  fontSize: 16,
+                  fontWeight: Fonts.MEDIUM,
                 color: 'inherit',
-              }}
+                }}
               component='span'
-            >
+              >
               {user?.displayName ? user?.displayName : 'Admin User '}
+              </Box>
+              <Box
+                sx={{
+                  ml: 3,
+                color: 'inherit',
+                display: 'flex',
+                }}
+              >
+                <ExpandMoreIcon />
+              </Box>
             </Box>
             <Box
               sx={{
-                ml: 3,
-                color: 'inherit',
-                display: 'flex',
-              }}
-            >
-              <ExpandMoreIcon />
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              mt: -0.5,
+                mt: -0.5,
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
               color: 'inherit',
-            }}
-          >
-            System Manager
+              }}
+            >
+              System Manager
+            </Box>
           </Box>
         </Box>
-      </Box>
-      <Menu
+        <Menu
         id='simple-menu'
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        anchorOrigin={{
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'right',
-        }}
-        transformOrigin={{
+          }}
+          transformOrigin={{
           vertical: 'top',
           horizontal: 'right',
-        }}
-      >
-        <MenuItem
-          onClick={() => {
-            handleClose();
-            history.push('/my-account');
           }}
         >
-          My account
-        </MenuItem>
-        <MenuItem onClick={logout}>Logout</MenuItem>
-      </Menu>
-    </>
+          <MenuItem
+            onClick={() => {
+              handleClose();
+            history.push('/my-account');
+            }}
+          >
+            My account
+          </MenuItem>
+          <MenuItem onClick={logout}>Logout</MenuItem>
+        </Menu>
+      </>
+      :
+      <>
+        <Link href={routes.account.login.href}>
+        <Button>
+          Log in
+        </Button>
+        </Link>
+        <Link href={routes.account.signup.href}>
+        <Button>
+          Sign up
+        </Button>
+        </Link>
+      </>
   );
 };
 
@@ -158,5 +176,5 @@ UserInfo.defaultProps = {
 };
 
 UserInfo.propTypes = {
-  color: PropTypes.string,
+  color: PropTypes.string
 };

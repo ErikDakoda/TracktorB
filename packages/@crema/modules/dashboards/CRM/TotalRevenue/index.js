@@ -1,7 +1,8 @@
 import React from 'react';
 import RevenueGraph from './RevenueGraph';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {Box, alpha} from '@mui/material';
+import {Box} from '@mui/material';
+import {alpha} from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import AppCard from '@crema/core/AppCard';
