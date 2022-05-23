@@ -10,12 +10,12 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import {useAuthUser} from '@crema/utility/AuthHooks';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import ReactQuill from 'react-quill';
+//import ReactQuill from 'react-quill';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 
 import {styled} from '@mui/material/styles';
 
-const ReactQuillWrapper = styled(ReactQuill)(() => {
+/*const ReactQuillWrapper = styled(ReactQuill)(() => {
   return {
     '& .ql-toolbar': {
       borderRadius: '8px 8px 0 0',
@@ -26,7 +26,7 @@ const ReactQuillWrapper = styled(ReactQuill)(() => {
       maxHeight: 200,
     },
   };
-});
+});*/
 
 const validationSchema = yup.object({
   to: yup
@@ -153,11 +153,12 @@ const MailForward = ({onSubmitForwardedMail}) => {
                 mb: 4,
               }}
             >
-              <ReactQuillWrapper
+              //TODO: Re-enable
+              {/*<ReactQuillWrapper
                 theme='snow'
                 placeholder={messages['common.writeContent']}
                 onChange={(value) => setFieldValue('content', value)}
-              />
+              />*/}
             </Box>
 
             <div style={{textAlign: 'right'}}>

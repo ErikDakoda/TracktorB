@@ -14,7 +14,7 @@ import Button from '@mui/material/Button';
 import {useAuthUser} from '@crema/utility/AuthHooks';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 import AppDialog from '@crema/core/AppDialog';
-import ReactQuill from 'react-quill';
+//import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import {blue} from '@mui/material/colors';
 import {Fonts} from '@crema/shared/constants/AppEnums';
@@ -22,7 +22,7 @@ import {Fonts} from '@crema/shared/constants/AppEnums';
 import {styled} from '@mui/material/styles';
 import {useRouter} from 'next/router';
 
-const ReactQuillWrapper = styled(ReactQuill)(() => {
+/*const ReactQuillWrapper = styled(ReactQuill)(() => {
   return {
     '& .ql-toolbar': {
       borderRadius: '8px 8px 0 0',
@@ -33,7 +33,7 @@ const ReactQuillWrapper = styled(ReactQuill)(() => {
       maxHeight: 200,
     },
   };
-});
+});*/
 
 const CcBccFieldWrapper = styled('div')(() => {
   return {
@@ -273,11 +273,12 @@ const ComposeMail = (props) => {
                   mb: 3,
                 }}
               >
-                <ReactQuillWrapper
+                // TODO: Re-enable
+                {/*<ReactQuillWrapper
                   theme='snow'
                   placeholder={messages['common.writeContent']}
                   onChange={(value) => setFieldValue('content', value)}
-                />
+                />*/}
               </Box>
             </Box>
 

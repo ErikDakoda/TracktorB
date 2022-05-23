@@ -7,7 +7,6 @@ import { appWithTranslation } from "next-i18next";
 // Comment if you don't need Material UI
 import { createEmotionCache } from "@vulcanjs/next-mui";
 import CremaMuiThemeProvider from "~/components/providers/CremaMuiThemeProvider";
-import { MuiThemeProvider } from "~/components/providers/";
 
 import Head from "next/head";
 import {
@@ -16,7 +15,6 @@ import {
 } from "@vulcanjs/react-ui";
 
 import debug from "debug";
-import AppLayout from "@crema/core/AppLayout/horHeaderFixed/index";
 const debugPerf = debug("vns:perf");
 // @see https://nextjs.org/docs/advanced-features/measuring-performance
 export function reportWebVitals(metric) {
@@ -95,8 +93,7 @@ function VNApp({
             <VulcanCurrentUserProvider
                 value={{
                     currentUser: user || null,
-                    loading:
-                        false /* TODO: we don't get the loading information from useUser yet */,
+                    loading: typeof user === 'undefined',
                 }}
             >
                 <VulcanComponentsProvider>
@@ -112,9 +109,7 @@ function VNApp({
                     <CremaMuiThemeProvider pageProps={pageProps}>
                         <ApolloProvider client={apolloClient}>
                             <div id="root">
-                            <AppLayout>
                                 <Component {...pageProps} />
-                            </AppLayout>
                             </div>
                         </ApolloProvider>
                     </CremaMuiThemeProvider>
