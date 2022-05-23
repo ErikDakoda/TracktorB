@@ -23,6 +23,7 @@ const HeaderNavWrapper = ({children}) => {
         },
         '& .navItem': {
           width: 'auto',
+          minHeight: '40px !important',
           cursor: 'pointer',
           py: 1,
           px: {xs: 4, lg: 5},

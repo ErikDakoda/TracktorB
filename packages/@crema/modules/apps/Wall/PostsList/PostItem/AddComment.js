@@ -12,7 +12,7 @@ import {useDropzone} from 'react-dropzone';
 import {MessageType} from '@crema/services/db/apps/chat/connectionList';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import {styled} from '@mui/material/styles';
-import {darken} from '@mui/material';
+import {darken} from '@mui/material/styles';
 import {generateUniqueID} from '@crema/utility/Utils';
 
 const AddCommentWrapper = styled('div')(({theme}) => ({

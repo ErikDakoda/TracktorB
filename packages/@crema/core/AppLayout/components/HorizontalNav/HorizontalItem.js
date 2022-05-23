@@ -1,5 +1,5 @@
 import React from 'react';
-import {Icon, ListItem, ListItemText} from '@mui/material';
+import {Icon, MenuItem, ListItemText} from '@mui/material';
 import {useRouter, withRouter} from 'next/router';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -42,13 +42,13 @@ function HorizontalItem(props) {
 
   return (
     <Link href={item.url} as={item.as}>
-      <ListItem
+      <MenuItem
         className={clsx('navItemSubmenu', dense && 'dense', {
           active: item.url === props.router.pathname,
         })}
         exact={item.exact}
         sx={{
-          minHeight: 40,
+          minHeight: '40px !important',
           padding: '4px 12px',
           color: (theme) => theme.palette.text.primary,
           textDecoration: 'none!important',
@@ -101,7 +101,7 @@ function HorizontalItem(props) {
             />
           </Box>
         )}
-      </ListItem>
+      </MenuItem>
     </Link>
   );
 }

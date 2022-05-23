@@ -3,7 +3,7 @@ import {
   Grow,
   Icon,
   IconButton,
-  ListItem,
+  MenuItem,
   ListItemText,
   Paper,
 } from '@mui/material';
@@ -70,7 +70,7 @@ function HorizontalCollapse(props) {
       <Manager>
         <Reference>
           {({ref}) => (
-            <ListItem
+            <MenuItem
               ref={ref}
               button
               sx={{
@@ -129,7 +129,7 @@ function HorizontalCollapse(props) {
                   </Icon>
                 </IconButton>
               </Box>
-            </ListItem>
+            </MenuItem>
           )}
         </Reference>
         {ReactDOM.createPortal(

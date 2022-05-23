@@ -110,7 +110,7 @@ const AppHeader = () => {
             />
             <Box
               sx={{
-                minHeight: 40,
+                minHeight: '40px !important',
                 position: 'relative',
                 display: {xs: 'none', sm: 'block'},
                 '& .searchRoot': {

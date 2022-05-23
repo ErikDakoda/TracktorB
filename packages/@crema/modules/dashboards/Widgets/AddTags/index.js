@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import {blue, green, orange, red, teal} from '@mui/material/colors';
 import AppCard from '@crema/core/AppCard';
 import {useIntl} from 'react-intl';
-import {darken} from '@mui/material';
+import {darken} from '@mui/material/styles';
 
 const colorList = [
   {id: 9001, color: blue[600]},

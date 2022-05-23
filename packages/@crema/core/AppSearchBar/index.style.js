@@ -12,8 +12,8 @@ export const SearchWrapper = ({iconPosition, children}) => {
         display: 'block',
         cursor: 'pointer',
         '& .searchRoot .MuiInputBase-input': {
-          paddingLeft: iconPosition === 'right' ? 20 : 'calc(1em + 28px)',
-          paddingRight: iconPosition === 'right' ? 'calc(1em + 28px)' : 20,
+          paddingLeft: iconPosition === 'left' ? 'calc(1em + 28px)' : '20px',
+          paddingRight: iconPosition === 'right' ? 'calc(1em + 28px)' : '20px',
         },
       }}
     >

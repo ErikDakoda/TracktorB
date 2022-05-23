@@ -15,7 +15,7 @@ import {onCreateNewPost} from '@crema/redux/actions';
 import {useIntl} from 'react-intl';
 import IconButton from '@mui/material/IconButton';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-import {darken} from '@mui/material';
+import {darken} from '@mui/material/styles';
 
 const CreateView = styled('div')(({theme}) => ({
   flex: 1,

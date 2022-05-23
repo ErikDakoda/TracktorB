@@ -1,6 +1,7 @@
 import React from 'react';
 import AppCard from '@crema/core/AppCard';
-import {Box, darken} from '@mui/material';
+import {Box} from '@mui/material';
+import {darken} from '@mui/material/styles';
 import AppLinearProgress from '@crema/core/AppLinearProgress';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import {useIntl} from 'react-intl';

@@ -4,7 +4,7 @@ import {
   Icon,
   IconButton,
   List,
-  ListItem,
+  MenuItem,
   ListItemText,
   Paper,
 } from '@mui/material';
@@ -55,7 +55,7 @@ function HorizontalGroup(props) {
     <Manager>
       <Reference>
         {({ref}) => (
-          <ListItem
+          <MenuItem
             ref={ref}
             className={clsx(
               'navItem',
@@ -94,7 +94,7 @@ function HorizontalGroup(props) {
                 </Icon>
               </IconButton>
             )}
-          </ListItem>
+          </MenuItem>
         )}
       </Reference>
       {ReactDOM.createPortal(
