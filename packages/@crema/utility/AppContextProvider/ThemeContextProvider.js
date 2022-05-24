@@ -3,17 +3,10 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useState,
-} from 'react';
-import defaultConfig, {
-  backgroundDark,
-  backgroundLight,
-  defaultTheme,
-  textDark,
-  textLight,
-} from './defaultConfig';
-import PropTypes from 'prop-types';
-import {LayoutDirection, ThemeMode} from '@crema/shared/constants/AppEnums';
+  useState
+} from "react";
+import PropTypes from "prop-types";
+import { LayoutDirection, ThemeMode } from "@crema/shared/constants/AppEnums";
 
 const ThemeContext = createContext();
 const ThemeActionsContext = createContext();
@@ -22,10 +15,18 @@ export const useThemeContext = () => useContext(ThemeContext);
 
 export const useThemeActionsContext = () => useContext(ThemeActionsContext);
 
-const ThemeContextProvider = ({children}) => {
-  const [theme, setTheme] = useState(defaultTheme.theme);
-  const [themeMode, updateThemeMode] = useState(defaultConfig.themeMode);
-  const [themeStyle, updateThemeStyle] = useState(defaultConfig.themeStyle);
+const ThemeContextProvider = ({
+                                children,
+                                templateConfig,
+                                backgroundDark,
+                                backgroundLight,
+                                siteTheme,
+                                textDark,
+                                textLight
+                              }) => {
+  const [theme, setTheme] = useState(siteTheme.theme);
+  const [themeMode, updateThemeMode] = useState(templateConfig.themeMode);
+  const [themeStyle, updateThemeStyle] = useState(templateConfig.themeStyle);
 
   const updateTheme = useCallback((theme) => {
     setTheme(theme);
@@ -37,16 +38,16 @@ const ThemeContextProvider = ({children}) => {
       mode: themeMode === ThemeMode.DARK ? ThemeMode.DARK : ThemeMode.LIGHT,
       background:
         themeMode === ThemeMode.DARK ? backgroundDark : backgroundLight,
-      text: themeMode === ThemeMode.DARK ? textDark : textLight,
+      text: themeMode === ThemeMode.DARK ? textDark : textLight
     };
     updateTheme(theme);
   }, [themeMode, theme, updateTheme]);
 
   useEffect(() => {
     if (theme.direction === LayoutDirection.RTL) {
-      document.body.setAttribute('dir', LayoutDirection.RTL);
+      document.body.setAttribute("dir", LayoutDirection.RTL);
     } else {
-      document.body.setAttribute('dir', LayoutDirection.LTR);
+      document.body.setAttribute("dir", LayoutDirection.LTR);
     }
   }, [theme]);
 
@@ -55,14 +56,14 @@ const ThemeContextProvider = ({children}) => {
       value={{
         theme,
         themeStyle,
-        themeMode,
+        themeMode
       }}
     >
       <ThemeActionsContext.Provider
         value={{
           updateTheme,
           updateThemeStyle,
-          updateThemeMode,
+          updateThemeMode
         }}
       >
         {children}
@@ -75,4 +76,10 @@ export default ThemeContextProvider;
 
 ThemeContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
+  templateConfig: PropTypes.object.isRequired,
+  backgroundDark: PropTypes.object.isRequired,
+  backgroundLight: PropTypes.object.isRequired,
+  siteTheme: PropTypes.object.isRequired,
+  textDark: PropTypes.object.isRequired,
+  textLight: PropTypes.object.isRequired,
 };

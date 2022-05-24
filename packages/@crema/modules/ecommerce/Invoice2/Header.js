@@ -4,7 +4,7 @@ import invoiceData from '@crema/services/db/extraPages/invoice/invoiceData';
 import Typography from '@mui/material/Typography';
 import IntlMessages from '@crema/utility/IntlMessages';
 import {Fonts} from '@crema/shared/constants/AppEnums';
-import Logo from '../../../assets/icon/logo.svg';
+import {Logo} from '@crema/assets/icon/Logo';
 import {useThemeContext} from '@crema/utility/AppContextProvider/ThemeContextProvider';
 
 const Header = () => {
@@ -30,7 +30,7 @@ const Header = () => {
           },
         }}
       >
-        <Logo fill={theme.palette.primary.main} />
+        <Logo color={theme.palette.primary.main} />
       </Box>
 
       <Box

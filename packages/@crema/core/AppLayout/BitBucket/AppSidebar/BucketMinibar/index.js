@@ -4,12 +4,11 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import AppLngSwitcher from '../../../../AppLngSwitcher';
-import {ThemeMode} from '@crema/shared/constants/AppEnums';
 import {useThemeContext} from '@crema/utility/AppContextProvider/ThemeContextProvider';
 import AppMessages from '../../../../AppMessages';
 import AppNotifications from '../../../../AppNotifications';
 import UserInfo from '../UserInfo';
-import Logo from '../../../../../assets/icon/logo.svg';
+import { Logo } from '@crema/assets/icon/Logo';
 
 const BucketMinibar = () => {
   const {theme} = useThemeContext();
@@ -32,7 +31,7 @@ const BucketMinibar = () => {
           }}
           aria-label='show 17 new notifications'
         >
-          <Logo fill={theme.palette.primary.main} />
+          <Logo color={theme.palette.primary.main} />
         </IconButton>
 
         <IconButton

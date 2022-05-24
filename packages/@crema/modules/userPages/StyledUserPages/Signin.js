@@ -4,7 +4,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Button from '@mui/material/Button';
-import {Checkbox, useTheme} from '@mui/material';
+import {Checkbox} from '@mui/material';
+import {useTheme} from '@mui/material/styles';
 import {Form, Formik} from 'formik';
 import * as yup from 'yup';
 import Grid from '@mui/material/Grid';
@@ -16,7 +17,7 @@ import {grey} from '@mui/material/colors';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import AppAnimate from '@crema/core/AppAnimate';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import Logo from '../../../assets/user/login.svg';
+import {LoginIcon} from '@crema/assets/user/LoginIcon';
 
 const validationSchema = yup.object({
   email: yup
@@ -72,7 +73,7 @@ const Signin = () => {
                 },
               }}
             >
-              <Logo fill={theme.palette.primary.main} />
+              <LoginIcon color={theme.palette.primary.main} />
             </Grid>
             <Grid
               item

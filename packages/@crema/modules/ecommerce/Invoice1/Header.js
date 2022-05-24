@@ -5,8 +5,7 @@ import Typography from '@mui/material/Typography';
 import IntlMessages from '@crema/utility/IntlMessages';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import {useThemeContext} from '@crema/utility/AppContextProvider/ThemeContextProvider';
-
-import Logo from '../../../assets/icon/logo.svg';
+import {Logo} from '@crema/assets/icon/Logo';
 
 const Header = () => {
   const {theme} = useThemeContext();
@@ -36,7 +35,7 @@ const Header = () => {
           },
         }}
       >
-        <Logo fill={theme.palette.primary.main} />
+        <Logo color={theme.palette.primary.main} />
       </Box>
 
       <Box

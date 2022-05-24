@@ -1,5 +1,4 @@
 import React, {createContext, useCallback, useContext, useState} from 'react';
-import defaultConfig from './defaultConfig';
 import PropTypes from 'prop-types';
 
 const LayoutContext = createContext();
@@ -9,12 +8,12 @@ export const useLayoutContext = () => useContext(LayoutContext);
 
 export const useLayoutActionsContext = () => useContext(LayoutActionsContext);
 
-const LayoutContextProvider = ({children}) => {
-  const [layoutType, updateLayoutType] = useState(defaultConfig.layoutType);
-  const [navStyle, setNavStyle] = useState(defaultConfig.navStyle);
-  const [footerType, setFooterType] = useState(defaultConfig.footerType);
-  const [footer, setFooter] = useState(defaultConfig.footer);
-  const [headerType, setHeaderType] = useState(defaultConfig.headerType);
+const LayoutContextProvider = ({children, templateConfig}) => {
+  const [layoutType, updateLayoutType] = useState(templateConfig.layoutType);
+  const [navStyle, setNavStyle] = useState(templateConfig.navStyle);
+  const [footerType, setFooterType] = useState(templateConfig.footerType);
+  const [footer, setFooter] = useState(templateConfig.footer);
+  const [headerType, setHeaderType] = useState(templateConfig.headerType);
 
   const updateNavStyle = useCallback((navStyle) => {
     setNavStyle(navStyle);

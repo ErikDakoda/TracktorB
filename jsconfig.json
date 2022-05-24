@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@crema/*": [
+        "packages/@crema/*",
+        "node_modules/@crema/*"
+      ]
+    }
+  }
+}

@@ -1,5 +1,4 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
-import defaultConfig from './defaultConfig';
 import PropTypes from 'prop-types';
 import {useThemeActionsContext, useThemeContext} from './ThemeContextProvider';
 import {LayoutDirection} from '@crema/shared/constants/AppEnums';
@@ -11,14 +10,14 @@ export const useLocaleContext = () => useContext(LocaleContext);
 
 export const useLocaleActionsContext = () => useContext(LocaleActionsContext);
 
-const LocaleContextProvider = ({children}) => {
-  const [locale, updateLocale] = useState(defaultConfig.locale);
+const LocaleContextProvider = ({children, templateConfig}) => {
+  const [locale, updateLocale] = useState(templateConfig.locale);
   const {theme} = useThemeContext();
   const {updateTheme} = useThemeActionsContext();
 
   useEffect(() => {
     if (
-      defaultConfig.rtlLocale.includes(locale.locale) &&
+      templateConfig.rtlLocale.includes(locale.locale) &&
       theme.direction === LayoutDirection.LTR
     ) {
       updateTheme({
@@ -26,7 +25,7 @@ const LocaleContextProvider = ({children}) => {
         direction: LayoutDirection.RTL,
       });
     } else if (
-      !defaultConfig.rtlLocale.includes(locale.locale) &&
+      !templateConfig.rtlLocale.includes(locale.locale) &&
       theme.direction === LayoutDirection.RTL
     ) {
       updateTheme({
@@ -40,7 +39,7 @@ const LocaleContextProvider = ({children}) => {
     <LocaleContext.Provider
       value={{
         locale,
-        rtlLocale: defaultConfig.rtlLocale,
+        rtlLocale: templateConfig.rtlLocale,
       }}
     >
       <LocaleActionsContext.Provider
@@ -58,4 +57,5 @@ export default LocaleContextProvider;
 
 LocaleContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
+  templateConfig: PropTypes.object.isRequired,
 };

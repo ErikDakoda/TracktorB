@@ -1,6 +1,5 @@
 import React, {createContext, useCallback, useContext, useState} from 'react';
 import PropTypes from 'prop-types';
-import defaultConfig from './defaultConfig';
 
 const SidebarContext = createContext();
 const SidebarActionsContext = createContext();
@@ -9,18 +8,18 @@ export const useSidebarContext = () => useContext(SidebarContext);
 
 export const useSidebarActionsContext = () => useContext(SidebarActionsContext);
 
-const SidebarContextProvider = ({children}) => {
+const SidebarContextProvider = ({children, templateConfig}) => {
   const [menuStyle, updateMenuStyle] = useState(
-    defaultConfig.sidebar.menuStyle,
+    templateConfig.sidebar.menuStyle,
   );
   const [sidebarColorSet, updateSidebarColorSet] = useState(
-    defaultConfig.sidebar.colorSet,
+    templateConfig.sidebar.colorSet,
   );
   const [isSidebarBgImage, updateImage] = useState(
-    defaultConfig.sidebar.isSidebarBgImage,
+    templateConfig.sidebar.isSidebarBgImage,
   );
   const [sidebarBgImage, setSidebarImage] = useState(
-    defaultConfig.sidebar.sidebarBgImage,
+    templateConfig.sidebar.sidebarBgImage,
   );
 
   const setSidebarBgImage = useCallback((isSidebarBgImage) => {
@@ -38,7 +37,7 @@ const SidebarContextProvider = ({children}) => {
         menuStyle,
         isSidebarBgImage,
         sidebarBgImage,
-        borderColor: defaultConfig.sidebar.borderColor,
+        borderColor: templateConfig.sidebar.borderColor,
       }}
     >
       <SidebarActionsContext.Provider
@@ -59,4 +58,5 @@ export default SidebarContextProvider;
 
 SidebarContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
+  templateConfig: PropTypes.object.isRequired,
 };
