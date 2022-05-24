@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ThemeContextProvider from "./ThemeContextProvider";
-import LocaleContextProvider from "./LocaleContextProvide";
+import LocaleContextProvider from "./LocaleContextProvider";
 import LayoutContextProvider from "./LayoutContextProvider";
 import SidebarContextProvider from "./SidebarContextProvider";
+import NavContextProvider from "./NavContextProvider";
 
 const AppContextProvider = ({
                               children,
@@ -12,7 +13,8 @@ const AppContextProvider = ({
                               backgroundLight,
                               siteTheme,
                               textDark,
-                              textLight
+                              textLight,
+                              siteNavConfig
                             }) => {
   return (
     <ThemeContextProvider
@@ -26,7 +28,9 @@ const AppContextProvider = ({
       <LocaleContextProvider templateConfig={templateConfig}>
         <LayoutContextProvider templateConfig={templateConfig}>
           <SidebarContextProvider templateConfig={templateConfig}>
-            {children}
+            <NavContextProvider siteNavConfig={siteNavConfig}>
+              {children}
+            </NavContextProvider>
           </SidebarContextProvider>
         </LayoutContextProvider>
       </LocaleContextProvider>
@@ -37,5 +41,12 @@ const AppContextProvider = ({
 export default AppContextProvider;
 
 AppContextProvider.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  templateConfig: PropTypes.object.isRequired,
+  backgroundDark: PropTypes.object.isRequired,
+  backgroundLight: PropTypes.object.isRequired,
+  siteTheme: PropTypes.object.isRequired,
+  textDark: PropTypes.object.isRequired,
+  textLight: PropTypes.object.isRequired,
+  siteNavConfig: PropTypes.array.isRequired,
 };

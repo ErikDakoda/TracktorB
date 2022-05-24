@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useContext } from "react";
 import HorizontalGroup from './HorizontalGroup';
 import HorizontalCollapse from './HorizontalCollapse';
 import HorizontalItem from './HorizontalItem';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
-import routesConfig from '@crema/modules/routesConfig';
+import { useNavContext } from '@crema/utility/AppContextProvider/NavContextProvider';
 
 const HorizontalNav = () => {
+  const { navConfig } = useNavContext();
   return (
     <List className='navbarNav'>
-      {routesConfig.map((item) => (
+      {navConfig.map((item) => (
         <React.Fragment key={item.id}>
           {item.type === 'group' && (
             <HorizontalGroup item={item} nestedLevel={0} />

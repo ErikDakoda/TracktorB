@@ -8,7 +8,7 @@ import {Fonts} from '@crema/shared/constants/AppEnums';
 import {
   useLocaleActionsContext,
   useLocaleContext,
-} from '@crema/utility/AppContextProvider/LocaleContextProvide';
+} from '@crema/utility/AppContextProvider/LocaleContextProvider';
 import Typography from '@mui/material/Typography';
 import {Box} from '@mui/material';
 import {alpha} from '@mui/material/styles';

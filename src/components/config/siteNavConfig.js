@@ -29,7 +29,7 @@ import {GrDatabase, GrNavigate} from 'react-icons/gr';
 import {VscTable, VscTools} from 'react-icons/vsc';
 import {AiOutlineLayout, AiOutlineUnorderedList} from 'react-icons/ai';
 
-const routesConfig = [
+const siteNavConfig = [
   {
     id: 'app',
     title: 'Application',
@@ -1239,4 +1239,4 @@ const routesConfig = [
     ],
   },
 ];
-export default routesConfig;
+export default siteNavConfig;

@@ -1,7 +1,6 @@
 import React from 'react';
 import List from '@mui/material/List';
-
-import routesConfig from '@crema/modules/routesConfig';
+import { useNavContext } from '@crema/utility/AppContextProvider/NavContextProvider';
 import NavVerticalGroup from './VerticalNavGroup';
 import VerticalCollapse from './VerticalCollapse';
 import VerticalItem from './VerticalItem';
@@ -9,6 +8,7 @@ import {useRouter} from 'next/router';
 
 const VerticalNav = () => {
   const router = useRouter();
+  const { navConfig } = useNavContext();
   return (
     <List
       sx={{
@@ -17,7 +17,7 @@ const VerticalNav = () => {
       }}
       component='div'
     >
-      {routesConfig.map((item) => (
+      {navConfig.map((item) => (
         <React.Fragment key={item.id}>
           {item.type === 'group' && (
             <NavVerticalGroup item={item} level={0} router={router} />
