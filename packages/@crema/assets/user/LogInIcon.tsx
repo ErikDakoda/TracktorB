@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
-export const LoginIcon = ({ className, color }) => {
+export const LogInIcon = ({ className, color }) => {
   return (
     <svg viewBox="0 0 500 500">
       <g id="freepik--Floor--inject-18">
@@ -397,7 +397,7 @@ export const LoginIcon = ({ className, color }) => {
 };
 
 
-LoginIcon.propTypes = {
+LogInIcon.propTypes = {
   color: PropTypes.string,
   className: PropTypes.string
 };

@@ -7,7 +7,7 @@ import {Fonts} from '@crema/shared/constants/AppEnums';
 import {initialUrl} from '@crema/shared/constants/AppConst';
 import AppAnimate from '@crema/core/AppAnimate';
 import IntlMessages from '@crema/utility/IntlMessages';
-import Logo from '../../../assets/icon/403.svg';
+import {Error403Icon} from '@crema/assets/icon/Error403Icon';
 import {useTheme} from '@mui/material/styles';
 import {useRouter} from 'next/router';
 
@@ -43,7 +43,7 @@ const Error403 = () => {
             },
           }}
         >
-          <Logo fill={theme.palette.primary.main} />
+          <Error403Icon color={theme.palette.primary.main} />
         </Box>
         <Box sx={{mb: {xs: 4, xl: 5}}}>
           <Box

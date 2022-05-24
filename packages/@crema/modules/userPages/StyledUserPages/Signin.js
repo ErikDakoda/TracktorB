@@ -17,7 +17,7 @@ import {grey} from '@mui/material/colors';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import AppAnimate from '@crema/core/AppAnimate';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import {LoginIcon} from '@crema/assets/user/LoginIcon';
+import {LogInIcon} from '@crema/assets/user/LoginIcon';
 
 const validationSchema = yup.object({
   email: yup
@@ -73,7 +73,7 @@ const Signin = () => {
                 },
               }}
             >
-              <LoginIcon color={theme.palette.primary.main} />
+              <LogInIcon color={theme.palette.primary.main} />
             </Grid>
             <Grid
               item

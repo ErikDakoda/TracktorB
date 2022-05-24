@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
-import {Checkbox, useTheme} from '@mui/material';
+import {Checkbox} from '@mui/material';
+import {useTheme} from '@mui/material/styles';
 import {Form, Formik} from 'formik';
 import * as yup from 'yup';
 import Grid from '@mui/material/Grid';
@@ -10,7 +11,7 @@ import Box from '@mui/material/Box';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import AppAnimate from '@crema/core/AppAnimate';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import Logo from '../../../assets/user/signup.svg';
+import { SignUpIcon } from '@crema/assets/user/SignUpIcon';``
 
 const validationSchema = yup.object({
   name: yup.string().required(<IntlMessages id='validation.nameRequired' />),
@@ -71,7 +72,7 @@ const Signup = () => {
                 },
               }}
             >
-              <Logo fill={theme.palette.primary.main} />
+              <SignUpIcon color={theme.palette.primary.main} />
             </Grid>
 
             <Grid

@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import AppAnimate from '@crema/core/AppAnimate';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import Logo from '../../../assets/user/reset-password.svg';
+import { ResetPassIcon } from '@crema/assets/user/ResetPassIcon';
 import {useTheme} from '@mui/material/styles';
 
 const validationSchema = yup.object({
@@ -82,7 +82,7 @@ const ResetPassword = () => {
                   },
                 }}
               >
-                <Logo fill={theme.palette.primary.main} />
+                <ResetPassIcon color={theme.palette.primary.main} />
               </Box>
             </Grid>
 

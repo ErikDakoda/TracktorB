@@ -8,7 +8,7 @@ import {initialUrl} from '@crema/shared/constants/AppConst';
 import AppAnimate from '@crema/core/AppAnimate';
 import IntlMessages from '@crema/utility/IntlMessages';
 import {useTheme} from '@mui/material/styles';
-import Logo from '../../../assets/icon/maintenance.svg';
+import {MaintenanceIcon} from '@crema/assets/icon/MaintenanceIcon';
 import {useRouter} from 'next/router';
 
 const Maintenance = () => {
@@ -44,7 +44,7 @@ const Maintenance = () => {
             },
           }}
         >
-          <Logo fill={theme.palette.primary.main} />
+          <MaintenanceIcon color={theme.palette.primary.main} />
         </Box>
         <Box
           sx={{

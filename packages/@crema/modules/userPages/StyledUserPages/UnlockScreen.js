@@ -6,11 +6,12 @@ import * as yup from 'yup';
 import Grid from '@mui/material/Grid';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
-import {Typography, useTheme} from '@mui/material';
+import {Typography} from '@mui/material';
+import {useTheme} from '@mui/material/styles';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import AppAnimate from '@crema/core/AppAnimate';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import Logo from '../../../assets/user/lock-screen.svg';
+import { LockScreenIcon } from '@crema/assets/user/LockScreenIcon';
 
 const validationSchema = yup.object({
   password: yup
@@ -68,7 +69,7 @@ const UnlockScreen = () => {
                   },
                 }}
               >
-                <Logo fill={theme.palette.primary.main} />
+                <LockScreenIcon color={theme.palette.primary.main} />
               </Box>
             </Grid>
 
