@@ -7,6 +7,7 @@ import {
   Typography,
   TextField,
 } from "@mui/material";
+import UserFrame from "@crema/modules/userPages/UserPages/UserFrame";
 import { ErrorSuccessMessages } from "~/components/account/ErrorSuccessMessages";
 import { useState } from "react";
 

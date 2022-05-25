@@ -1,258 +1,195 @@
-import React from 'react';
-import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
-import {Checkbox} from '@mui/material';
-import {Form, Formik} from 'formik';
-import * as yup from 'yup';
-import IntlMessages from '@crema/utility/IntlMessages';
-import Box from '@mui/material/Box';
-import {Fonts} from '@crema/shared/constants/AppEnums';
-import {grey} from '@mui/material/colors/index';
-import AppAnimate from '@crema/core/AppAnimate';
-import AppTextField from '@crema/core/AppFormComponents/AppTextField';
+import React from "react";
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import { Form, Formik } from "formik";
+import * as yup from "yup";
+import IntlMessages from "@crema/utility/IntlMessages";
+import Box from "@mui/material/Box";
+import { Fonts } from "@crema/shared/constants/AppEnums";
+import { grey } from "@mui/material/colors/index";
+import AppTextField from "@crema/core/AppFormComponents/AppTextField";
+import UserFrame from "./UserFrame";
+import { useNavContext } from "@crema/utility/AppContextProvider/NavContextProvider";
+import NextMuiTextLink from "~/components/ui/NextMuiTextLink";
 
 const validationSchema = yup.object({
-  name: yup.string().required(<IntlMessages id='validation.nameRequired' />),
+  name: yup.string().required(<IntlMessages id="validation.nameRequired" />),
   email: yup
     .string()
-    .email(<IntlMessages id='validation.emailFormat' />)
-    .required(<IntlMessages id='validation.emailRequired' />),
+    .email(<IntlMessages id="validation.emailFormat" />)
+    .required(<IntlMessages id="validation.emailRequired" />),
   password: yup
     .string()
-    .required(<IntlMessages id='validation.passwordRequired' />),
+    .required(<IntlMessages id="validation.passwordRequired" />),
   confirmPassword: yup
     .string()
-    .required(<IntlMessages id='validation.reTypePassword' />),
+    .required(<IntlMessages id="validation.reTypePassword" />)
 });
 
 const Signup = () => {
+  const { submitSignUp, routes } = useNavContext();
+
   return (
-    <AppAnimate animation='transition.slideUpIn' delay={200}>
-      <Box
-        sx={{
-          pb: 6,
-          py: {xl: 8},
-          display: 'flex',
-          flex: 1,
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
+    <UserFrame title={<IntlMessages id="common.signup" />}>
+
+      <Formik
+        validateOnChange={true}
+        initialValues={{
+          name: "",
+          email: "",
+          password: "",
+          confirmPassword: ""
+        }}
+        validationSchema={validationSchema}
+        onSubmit={async (data, { setErrors }) => {
+          if (data.password !== data.confirmPassword) {
+            setErrors({
+              confirmPassword: (
+                <IntlMessages id="validation.passwordMisMatch" />
+              )
+            });
+          } else {
+            try {
+              await submitSignUp(data);
+            } catch (error) {
+              console.error("An error occurred submitting the sign up form:", error);
+              setErrors({ email: error.message });
+            }
+          }
         }}
       >
-        <Card
-          sx={{
-            maxWidth: 576,
-            width: '100%',
-            textAlign: 'center',
-            padding: {xs: 8, lg: 12, xl: '48px 64px'},
-            overflow: 'hidden',
-            boxShadow:
-              '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-          }}
-        >
-          <Box
+        {({ isSubmitting }) => (
+          <Form
             sx={{
-              mb: {xs: 3, xl: 4},
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              textAlign: "left"
             }}
+            noValidate
+            autoComplete="off"
           >
             <Box
               sx={{
-                mr: 2,
-                '.logo': {
-                  height: 24,
-                },
+                mb: { xs: 3, xl: 4 }
               }}
             >
-              <img
-                className='logo'
-                src={'/assets/images/logo-icon-large.png'}
-                alt='crema'
-                title='crema'
+              <AppTextField
+                label={<IntlMessages id="common.name" />}
+                name="name"
+                variant="outlined"
+                sx={{
+                  width: "100%"
+                }}
               />
             </Box>
+
             <Box
               sx={{
-                mb: 1.5,
-                fontWeight: Fonts.BOLD,
-                fontSize: 20,
+                mb: { xs: 3, xl: 4 }
               }}
             >
-              <IntlMessages id='common.signup' />
-            </Box>
-          </Box>
-
-          <Formik
-            validateOnChange={true}
-            initialValues={{
-              name: '',
-              email: '',
-              password: '',
-              confirmPassword: '',
-            }}
-            validationSchema={validationSchema}
-            onSubmit={(data, {setErrors, resetForm}) => {
-              if (data.password !== data.confirmPassword) {
-                setErrors({
-                  confirmPassword: (
-                    <IntlMessages id='validation.passwordMisMatch' />
-                  ),
-                });
-              } else {
-                resetForm();
-              }
-            }}
-          >
-            {({isSubmitting}) => (
-              <Form
+              <AppTextField
+                label={<IntlMessages id="common.email" />}
+                name="email"
+                variant="outlined"
                 sx={{
-                  textAlign: 'left',
+                  width: "100%"
                 }}
-                noValidate
-                autoComplete='off'
-              >
-                <Box
-                  sx={{
-                    mb: {xs: 3, xl: 4},
-                  }}
-                >
-                  <AppTextField
-                    label={<IntlMessages id='common.name' />}
-                    name='name'
-                    variant='outlined'
-                    sx={{
-                      width: '100%',
-                    }}
-                  />
-                </Box>
-
-                <Box
-                  sx={{
-                    mb: {xs: 3, xl: 4},
-                  }}
-                >
-                  <AppTextField
-                    label={<IntlMessages id='common.email' />}
-                    name='email'
-                    variant='outlined'
-                    sx={{
-                      width: '100%',
-                    }}
-                  />
-                </Box>
-
-                <Box
-                  sx={{
-                    mb: {xs: 3, xl: 4},
-                  }}
-                >
-                  <AppTextField
-                    label={<IntlMessages id='common.password' />}
-                    name='password'
-                    type='password'
-                    variant='outlined'
-                    sx={{
-                      width: '100%',
-                    }}
-                  />
-                </Box>
-
-                <Box
-                  sx={{
-                    mb: {xs: 3, xl: 4},
-                  }}
-                >
-                  <AppTextField
-                    label={<IntlMessages id='common.retypePassword' />}
-                    name='confirmPassword'
-                    type='password'
-                    variant='outlined'
-                    sx={{
-                      width: '100%',
-                    }}
-                  />
-                </Box>
-
-                <Box
-                  sx={{
-                    mb: {xs: 5, xl: 6},
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Box
-                    sx={{
-                      ml: -3,
-                    }}
-                  >
-                    <Checkbox />
-                  </Box>
-                  <Box
-                    component='span'
-                    sx={{
-                      mr: 2,
-                      fontSize: 14,
-                    }}
-                  >
-                    <IntlMessages id='common.iAgreeTo' />
-                  </Box>
-                  <Box
-                    component='span'
-                    sx={{
-                      color: 'primary.main',
-                      fontWeight: Fonts.BOLD,
-                      fontSize: 14,
-                      cursor: 'pointer',
-                    }}
-                  >
-                    <IntlMessages id='common.termConditions' />
-                  </Box>
-                </Box>
-                <Button
-                  variant='contained'
-                  color='primary'
-                  disabled={isSubmitting}
-                  sx={{
-                    width: '100%',
-                    height: 44,
-                  }}
-                  type='submit'
-                >
-                  <IntlMessages id='common.signup' />
-                </Button>
-              </Form>
-            )}
-          </Formik>
-
-          <Box
-            sx={{
-              mt: {xs: 3, xl: 4},
-              textAlign: 'center',
-              color: grey[700],
-              fontSize: 14,
-              fontWeight: Fonts.BOLD,
-            }}
-          >
-            <Box component='span' sx={{mr: 1}}>
-              <IntlMessages id='common.alreadyHaveAccount' />
+              />
             </Box>
+
             <Box
-              component='span'
               sx={{
-                color: 'primary.main',
-                fontWeight: Fonts.MEDIUM,
-                cursor: 'pointer',
+                mb: { xs: 3, xl: 4 }
               }}
             >
-              <IntlMessages id='common.signInHere' />
+              <AppTextField
+                label={<IntlMessages id="common.password" />}
+                name="password"
+                type="password"
+                variant="outlined"
+                sx={{
+                  width: "100%"
+                }}
+              />
             </Box>
-          </Box>
-        </Card>
+
+            <Box
+              sx={{
+                mb: { xs: 3, xl: 4 }
+              }}
+            >
+              <AppTextField
+                label={<IntlMessages id="common.retypePassword" />}
+                name="confirmPassword"
+                type="password"
+                variant="outlined"
+                sx={{
+                  width: "100%"
+                }}
+              />
+            </Box>
+
+            <Box
+              sx={{
+                mb: { xs: 5, xl: 6 },
+                display: "flex",
+                flexDirection: "column",
+                flexWrap: "wrap",
+                alignItems: "center"
+              }}
+            >
+              <Box>
+                <FormControlLabel control={<Checkbox />} label={
+                  <>
+                    <IntlMessages id="common.iAgreeTo" /> <NextMuiTextLink href={routes.common.terms.href}>
+                      <IntlMessages id="common.termConditions" />
+                  </NextMuiTextLink>
+                  </>
+                } />
+              </Box>
+            </Box>
+            <Button
+              variant="contained"
+              color="primary"
+              disabled={isSubmitting}
+              sx={{
+                width: "100%",
+                height: 44
+              }}
+              type="submit"
+            >
+              <IntlMessages id="common.signup" />
+            </Button>
+          </Form>
+        )}
+      </Formik>
+
+      <Box
+        sx={{
+          mt: { xs: 3, xl: 4 },
+          textAlign: "center",
+          color: grey[700],
+          fontSize: 14,
+          fontWeight: Fonts.BOLD
+        }}
+      >
+        <Box component="span" sx={{ mr: 1 }}>
+          <IntlMessages id="common.alreadyHaveAccount" />
+        </Box>
+        <Box
+          component="span"
+          sx={{
+            color: "primary.main",
+            fontWeight: Fonts.MEDIUM,
+            cursor: "pointer"
+          }}
+        >
+          <NextMuiTextLink href={routes.account.login.href}>
+            <IntlMessages id="common.signInHere" />
+          </NextMuiTextLink>
+        </Box>
       </Box>
-    </AppAnimate>
+    </UserFrame>
   );
 };
 

@@ -15,8 +15,10 @@ import templateConfig, {
   siteTheme,
   textDark,
   textLight
-} from "../config/templateConfig";
-import siteNavConfig from "../config/siteNavConfig";
+} from "~/lib/templateConfig";
+import siteNavConfig from "~/lib/siteNavConfig";
+import { routes } from "~/lib/routes";
+import { apiRoutes } from "~/lib/api/apiRoutes";
 
 import "@crema/services";
 //import "@crema/shared/vendors/index.css";
@@ -38,13 +40,15 @@ export default function CremaMuiThemeProvider(props) {
         textDark={textDark}
         textLight={textLight}
         siteNavConfig={siteNavConfig}
+        siteRoutes={routes}
+        siteApiRoutes={apiRoutes}
       >
         <Provider store={store}>
           <AppThemeProvider>
             <AppStyleProvider>
               <AppLocaleProvider>
 
-                <CssBaseline />
+                <CssBaseline enableColorScheme />
                 {children}
 
               </AppLocaleProvider>

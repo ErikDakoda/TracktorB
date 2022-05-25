@@ -14,7 +14,9 @@ const AppContextProvider = ({
                               siteTheme,
                               textDark,
                               textLight,
-                              siteNavConfig
+                              siteNavConfig,
+                              siteRoutes,
+  siteApiRoutes,
                             }) => {
   return (
     <ThemeContextProvider
@@ -28,7 +30,10 @@ const AppContextProvider = ({
       <LocaleContextProvider templateConfig={templateConfig}>
         <LayoutContextProvider templateConfig={templateConfig}>
           <SidebarContextProvider templateConfig={templateConfig}>
-            <NavContextProvider siteNavConfig={siteNavConfig}>
+            <NavContextProvider siteNavConfig={siteNavConfig}
+                                siteRoutes={siteRoutes}
+                                siteApiRoutes={siteApiRoutes}
+            >
               {children}
             </NavContextProvider>
           </SidebarContextProvider>
@@ -49,4 +54,6 @@ AppContextProvider.propTypes = {
   textDark: PropTypes.object.isRequired,
   textLight: PropTypes.object.isRequired,
   siteNavConfig: PropTypes.array.isRequired,
+  siteRoutes: PropTypes.object.isRequired,
+  siteApiRoutes: PropTypes.object.isRequired,
 };

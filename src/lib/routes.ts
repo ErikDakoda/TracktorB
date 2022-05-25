@@ -26,6 +26,11 @@ export const routes = {
       href: "/account/profile",
     },
   },
+  common: {
+    terms: {
+      href: "/terms-of-service"
+    },
+  },
   vn: {
     admin: {
       home: {

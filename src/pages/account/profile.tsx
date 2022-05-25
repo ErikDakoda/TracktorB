@@ -1,4 +1,7 @@
 import { useUser } from "~/components/account/hooks";
+import React from 'react';
+import AppPage from '@crema/hoc/AppPage';
+import asyncComponent from '@crema/utility/asyncComponent';
 import { PageLayout } from "~/components/layout";
 import ChangePasswordForm from "~/components/account/ChangePassword";
 import { Typography } from "@mui/material";
@@ -18,4 +21,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default AppPage(() => <Profile />);

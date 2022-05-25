@@ -1,20 +1,20 @@
-import React from 'react';
-import orange from '@mui/material/colors/orange';
-import {useAuthMethod, useAuthUser} from '@crema/utility/AuthHooks';
-import {Box} from '@mui/material';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {Fonts} from '@crema/shared/constants/AppEnums';
-import PropTypes from 'prop-types';
-import {useRouter} from 'next/router';
+import React from "react";
+import orange from "@mui/material/colors/orange";
+import { useAuthUser } from "@crema/utility/AuthHooks";
+import { useNavContext } from "@crema/utility/AppContextProvider/NavContextProvider";
+import { Box } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Fonts } from "@crema/shared/constants/AppEnums";
+import PropTypes from "prop-types";
+import { useRouter } from "next/router";
 import { Button } from "@mui/material";
-import Link from 'next/link';
-import { routes } from "~/lib/routes";
+import Link from "next/link";
 
 const UserInfo = ({ color }) => {
-  const { logout } = {}; //useAuthMethod();
+  const { routes, doLogOut } = useNavContext();
   const { user } = useAuthUser();
   const history = useRouter();
 
@@ -46,11 +46,11 @@ const UserInfo = ({ color }) => {
           sx={{
             py: 3,
             px: 3,
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer',
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer"
           }}
-        className='user-info-view'
+          className="user-info-view"
         >
           <Box sx={{ py: 0.5 }}>
             {user?.photoURL ? (
@@ -78,38 +78,38 @@ const UserInfo = ({ color }) => {
           </Box>
           <Box
             sx={{
-            width: {xs: 'calc(100% - 62px)', xl: 'calc(100% - 72px)'},
+              width: { xs: "calc(100% - 62px)", xl: "calc(100% - 72px)" },
               ml: 4,
               color: color
             }}
-          className='user-info'
+            className="user-info"
           >
             <Box
               sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between"
               }}
             >
               <Box
                 sx={{
                   mb: 0,
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
                   fontSize: 16,
                   fontWeight: Fonts.MEDIUM,
-                color: 'inherit',
+                  color: "inherit"
                 }}
-              component='span'
+                component="span"
               >
-              {user?.displayName ? user?.displayName : 'Admin User '}
+                {user?.displayName ? user?.displayName : "Admin User "}
               </Box>
               <Box
                 sx={{
                   ml: 3,
-                color: 'inherit',
-                display: 'flex',
+                  color: "inherit",
+                  display: "flex"
                 }}
               >
                 <ExpandMoreIcon />
@@ -118,9 +118,9 @@ const UserInfo = ({ color }) => {
             <Box
               sx={{
                 mt: -0.5,
-              textOverflow: 'ellipsis',
-              whiteSpace: 'nowrap',
-              color: 'inherit',
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+                color: "inherit"
               }}
             >
               System Manager
@@ -128,42 +128,42 @@ const UserInfo = ({ color }) => {
           </Box>
         </Box>
         <Menu
-        id='simple-menu'
+          id="simple-menu"
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
           onClose={handleClose}
           anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
+            vertical: "bottom",
+            horizontal: "right"
           }}
           transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+            vertical: "top",
+            horizontal: "right"
           }}
         >
           <MenuItem
             onClick={() => {
               handleClose();
-            history.push('/my-account');
+              history.push(routes.account.profile.href);
             }}
           >
             My account
           </MenuItem>
-          <MenuItem onClick={logout}>Logout</MenuItem>
+          <MenuItem onClick={doLogOut}>Log out</MenuItem>
         </Menu>
       </>
       :
       <>
         <Link href={routes.account.login.href}>
-        <Button>
-          Log in
-        </Button>
+          <Button>
+            Log in
+          </Button>
         </Link>
         <Link href={routes.account.signup.href}>
-        <Button>
-          Sign up
-        </Button>
+          <Button>
+            Sign up
+          </Button>
         </Link>
       </>
   );
@@ -172,7 +172,7 @@ const UserInfo = ({ color }) => {
 export default UserInfo;
 
 UserInfo.defaultProps = {
-  color: 'text.secondary',
+  color: "text.secondary"
 };
 
 UserInfo.propTypes = {

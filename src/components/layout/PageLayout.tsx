@@ -1,6 +1,5 @@
 import { Container, Box } from "@mui/material";
 import { ReactElement } from "react";
-import { GitHubButtonsHeader } from "./GitHubButtonsHeader";
 
 /**
  * Default layout, to be used in pages
@@ -12,8 +11,6 @@ interface PageLayoutProps {
 
 const PageLayout = ({ children }: PageLayoutProps) => (
   <Container sx={{ mx: "auto", my: 2 }}>
-    <GitHubButtonsHeader />
-
     {children}
   </Container>
 );
