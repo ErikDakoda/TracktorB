@@ -1,20 +1,25 @@
+
 export const ThemeStyle = {
   MODERN: 'modern',
   STANDARD: 'standard',
 };
+
 export const ThemeStyleRadius = {
   MODERN: 30,
   STANDARD: 16,
 };
+
 export const ThemeMode = {
   LIGHT: 'light',
   DARK: 'dark',
 };
+
 export const LayoutType = {
   FULL_WIDTH: 'full-width',
   BOXED: 'boxed',
   FRAMED: 'framed',
 };
+
 export const MenuStyle = {
   DEFAULT: 'default',
   STANDARD: 'standard',
@@ -22,10 +27,12 @@ export const MenuStyle = {
   ROUNDED_REVERSE: 'rounded-reverse',
   CURVED_MENU: 'curved-menu',
 };
+
 export const LayoutDirection = {
   RTL: 'rtl',
   LTR: 'ltr',
 };
+
 export const NavStyle = {
   DEFAULT: 'default',
   BIT_BUCKET: 'bit-bucket',
@@ -39,15 +46,18 @@ export const NavStyle = {
   HOR_HEADER_FIXED: 'hor-header-fixed',
   HOR_DARK_LAYOUT: 'hor-dark-layout',
 };
+
 export const FooterType = {
   FIXED: 'fixed',
   FLUID: 'fluid',
 };
+
 export const HeaderType = {
   DARK: 'dark',
   LIGHT: 'light',
   FIXED: 'fixed',
 };
+
 export const RouteTransition = {
   NONE: 'none',
   alpha: 'alpha',
@@ -56,6 +66,7 @@ export const RouteTransition = {
   SLIDE_UP: 'slideUp',
   SLIDE_DOWN: 'slideDown',
 };
+
 export const Fonts = {
   LIGHT: '300',
   REGULAR: '400',

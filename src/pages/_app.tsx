@@ -17,7 +17,7 @@ import {
 import debug from "debug";
 const debugPerf = debug("vns:perf");
 // @see https://nextjs.org/docs/advanced-features/measuring-performance
-export function reportWebVitals(metric) {
+export function reportWebVitals(metric: object) {
     debugPerf(metric); // The metric object ({ id, name, startTime, value, label }) is logged to the console
 }
 
@@ -25,6 +25,8 @@ import { ApolloProvider } from "@apollo/client";
 import { useApollo } from "@vulcanjs/next-apollo";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { useUser } from "~/components/account/hooks";
+
+import "@crema/shared/vendors/index.css";
 
 // import environment from '@vulcanjs/multi-env-demo';
 // console.log('imported environment', environment); // should display "server"/"client" depending on the environment, this is just a test

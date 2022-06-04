@@ -1,4 +1,6 @@
-export const apiRoutes = {
+import { ApiRoutesConfig } from "~/types/routes";
+
+export const apiRoutes: ApiRoutesConfig = {
   account: {
     // POST
     signup: {

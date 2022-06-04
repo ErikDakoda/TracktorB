@@ -1,5 +1,7 @@
+import { RoutesConfig } from '~/types/routes';
+
 // NOTE: those function can also be used server-side, for instance in mails
-export const routes = {
+export const routes: RoutesConfig = {
   home: {
     href: "/",
   },

@@ -9,7 +9,7 @@ import { muiMdComponents } from "./muiMdComponents";
 
 const components = { ...muiMdComponents };
 
-export const MuiMdxLayout = (props) => {
+export const MuiMdxLayout = (props: object) => {
   return (
     <MDXProvider components={components}>
       <div {...props} />

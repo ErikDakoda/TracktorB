@@ -19,13 +19,13 @@ import vnColors from "~/lib/style/colors";
 // @see https://mdxjs.com/table-of-components
 // NOTE: those components are also used by next-mdx-remote based pages
 export const muiMdComponents = {
-  p: (props) => <Typography {...props} />,
-  h1: (props) => <Typography variant="h1" {...props} />,
-  h2: (props) => <Typography variant="h2" {...props} />,
-  h3: (props) => <Typography variant="h3" {...props} />,
-  h4: (props) => <Typography variant="h4" {...props} />,
-  h5: (props) => <Typography variant="h5" {...props} />,
-  h6: (props) => <Typography variant="h6" {...props} />,
+  p: (props: object) => <Typography {...props} />,
+  h1: (props: object) => <Typography variant="h1" {...props} />,
+  h2: (props: object) => <Typography variant="h2" {...props} />,
+  h3: (props: object) => <Typography variant="h3" {...props} />,
+  h4: (props: object) => <Typography variant="h4" {...props} />,
+  h5: (props: object) => <Typography variant="h5" {...props} />,
+  h6: (props: object) => <Typography variant="h6" {...props} />,
   //thematicBreak: Typography,
   //blockquote: Typography,
   //ul: List,
@@ -34,18 +34,18 @@ export const muiMdComponents = {
   //     - <Typography component={"span"} variant="body2" {...props} />
   //   </p>
   // ),
-  li: (props) => (
-    <li>
-      <Typography component="span" variant="body2" {...props} />
-    </li>
-  ),
+  // li: (props: object) => (
+  //   <li>
+  //     <Typography component="span" variant="body2" {...props} />
+  //   </li>
+  // ),
   table: Table,
   thead: TableHead,
   tbody: TableBody,
   tr: TableRow,
   // th/td will give SyntaxError: Arg string terminates parameters early for unknown reasons
   // "th/td": TableCell,
-  pre: (props) => (
+  pre: (props: object) => (
     <Paper
       elevation={1}
       sx={{
@@ -62,7 +62,7 @@ export const muiMdComponents = {
       <pre {...props} />
     </Paper>
   ),
-  code: (props) => (
+  code: (props: object) => (
     <Typography
       sx={{
         color: vnColors.darkBlueApollo, // "primary.main",
@@ -71,7 +71,7 @@ export const muiMdComponents = {
       <code {...props} />
     </Typography>
   ),
-  inlineCode: (props) => (
+  inlineCode: (props: object) => (
     <Typography
       component="span"
       sx={{
@@ -86,10 +86,10 @@ export const muiMdComponents = {
   // strong: Typography,
   //del: Typography,
   //inlineCode: Typography,
-  hr: (props) => <Divider sx={{ my: 2 }} {...props} />,
-  a: (props) => <Link {...props} />,
+  hr: (props: object) => <Divider sx={{ my: 2 }} {...props} />,
+  a: (props: object) => <Link {...props} />,
   // TODO: didn't find a way to override image styling...
-  img: (props) => (
+  img: (props: object) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       alt="Image from markdown content with no alt text"

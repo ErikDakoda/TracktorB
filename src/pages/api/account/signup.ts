@@ -14,7 +14,7 @@ import { getRootUrl } from "~/lib/api/utils";
 import { routes } from "~/lib/routes";
 import { debugAccount } from "~/lib/debuggers";
 
-type SignupBody = Pick<UserTypeServer, "email" | "password">;
+export type SignupBody = Pick<UserTypeServer, "email" | "password">;
 
 export default async function signup(
   req: NextApiRequest,

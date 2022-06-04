@@ -1,3 +1,4 @@
+import React from 'react';
 import {FaRegCalendarAlt, FaRegHospital} from 'react-icons/fa';
 import {FiMap, FiUsers} from 'react-icons/fi';
 import {HiOutlineAcademicCap, HiOutlineChartSquareBar} from 'react-icons/hi';
@@ -28,8 +29,9 @@ import {ImFeed, ImLab} from 'react-icons/im';
 import {GrDatabase, GrNavigate} from 'react-icons/gr';
 import {VscTable, VscTools} from 'react-icons/vsc';
 import {AiOutlineLayout, AiOutlineUnorderedList} from 'react-icons/ai';
+import { NavConfig } from '@crema/types/NavConfig';
 
-const siteNavConfig = [
+const navConfig: NavConfig = [
   {
     id: 'app',
     title: 'Application',
@@ -1239,4 +1241,4 @@ const siteNavConfig = [
     ],
   },
 ];
-export default siteNavConfig;
+export default navConfig;

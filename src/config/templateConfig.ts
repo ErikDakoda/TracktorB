@@ -12,29 +12,55 @@ import {
   ThemeStyleRadius,
 } from '@crema/shared/constants/AppEnums';
 
-export const textLight = {
+import {
+  TemplateConfig,
+  SidebarColorSet,
+  TextColorSet,
+  BackgroundColorSet,
+} from '@crema/types/TemplateConfig';
+
+export const textLight: TextColorSet = {
   primary: 'rgb(17, 24, 39)',
   secondary: 'rgb(107, 114, 128)',
   disabled: 'rgb(149, 156, 169)',
 };
 
-export const textDark = {
-  primary: 'rgb(255,255,255)',
+export const textDark: TextColorSet = {
+  primary: 'rgb(255, 255, 255)',
   secondary: 'rgb(229, 231, 235)',
   disabled: 'rgb(156, 163, 175)',
 };
 
-export const backgroundDark = {
-  paper: '#2B3137',
-  default: '#1F2527',
-};
-
-export const backgroundLight = {
+export const backgroundLight: BackgroundColorSet = {
   paper: '#FFFFFF',
   default: '#F4F7FE',
 };
 
+export const backgroundDark: BackgroundColorSet = {
+  paper: '#2B3137',
+  default: '#1F2527',
+};
+
+export const sidebarLight: SidebarColorSet = {
+  sidebarBgColor: '#fff',
+  sidebarTextColor: 'rgba(0, 0, 0, 0.60)',
+  sidebarHeaderColor: '#fff',
+  sidebarMenuSelectedBgColor: '#F4F7FE',
+  sidebarMenuSelectedTextColor: 'rgba(0, 0, 0, 0.87)',
+  mode: ThemeMode.LIGHT,
+};
+
+export const sidebarDark: SidebarColorSet = {
+  sidebarBgColor: '#313541',
+  sidebarTextColor: '#fff',
+  sidebarHeaderColor: '#313541',
+  sidebarMenuSelectedBgColor: '#F4F7FE',
+  sidebarMenuSelectedTextColor: 'rgba(0, 0, 0, 0.87)',
+  mode: ThemeMode.DARK,
+};
+
 const cardRadius = ThemeStyleRadius.STANDARD;
+
 export const siteTheme = {
   theme: {
     spacing: 4,
@@ -84,7 +110,7 @@ export const siteTheme = {
     },
     divider: 'rgba(224, 224, 224, 1)',
     typography: {
-      fontFamily: ['Poppins', 'sans-serif'].join(','),
+      fontFamily: ['Roboto', 'sans-serif'].join(','),
       fontSize: 14,
       fontWeight: 400,
       h1: {
@@ -202,32 +228,20 @@ export const siteTheme = {
   },
 };
 
-export const DarkSidebar = {
-  sidebarBgColor: '#313541',
-  sidebarTextColor: '#fff',
-  sidebarHeaderColor: '#313541',
-  sidebarMenuSelectedBgColor: '#F4F7FE',
-  sidebarMenuSelectedTextColor: 'rgba(0, 0, 0, 0.87)',
-  mode: ThemeMode.DARK,
-};
-
-export const LightSidebar = {
-  sidebarBgColor: '#fff',
-  sidebarTextColor: 'rgba(0, 0, 0, 0.60)',
-  sidebarHeaderColor: '#fff',
-  sidebarMenuSelectedBgColor: '#F4F7FE',
-  sidebarMenuSelectedTextColor: 'rgba(0, 0, 0, 0.87)',
-  mode: ThemeMode.LIGHT,
-};
-
-const templateConfig = {
+export const templateConfig: TemplateConfig = {
   sidebar: {
     borderColor: '#757575',
     menuStyle: MenuStyle.DEFAULT,
     isSidebarBgImage: false,
-    sidebarBgImage: 1,
-    colorSet: DarkSidebar,
+    sidebarBgImage: "1",
+    colorSet: sidebarDark,
   },
+  textLight: textLight,
+  textDark: textDark,
+  backgroundLight: backgroundLight,
+  backgroundDark: backgroundDark,
+  sidebarLight: sidebarLight,
+  sidebarDark: sidebarDark,
   themeStyle: ThemeStyle.STANDARD,
   themeMode: ThemeMode.DARK,
   navStyle: NavStyle.HOR_HEADER_FIXED,
@@ -244,4 +258,3 @@ const templateConfig = {
   },
   rtlLocale: ['ar'],
 };
-export default templateConfig;

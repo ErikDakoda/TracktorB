@@ -17,7 +17,7 @@ const authenticateWithPassword = async (req, res) => {
   return authenticate("local", req, res) as Promise<UserType>;
 };
 
-interface LoginReqBody {
+export interface LoginReqBody {
   email: string; // /!\  should match the "usernameField" of passport local strategy setup (default is "username")
   password: string;
 }

@@ -9,30 +9,22 @@ import NavContextProvider from "./NavContextProvider";
 const AppContextProvider = ({
                               children,
                               templateConfig,
-                              backgroundDark,
-                              backgroundLight,
                               siteTheme,
-                              textDark,
-                              textLight,
-                              siteNavConfig,
-                              siteRoutes,
-  siteApiRoutes,
+                              navConfig,
+                              routes,
+                              apiRoutes
                             }) => {
   return (
     <ThemeContextProvider
       templateConfig={templateConfig}
-      backgroundDark={backgroundDark}
-      backgroundLight={backgroundLight}
       siteTheme={siteTheme}
-      textDark={textDark}
-      textLight={textLight}
     >
       <LocaleContextProvider templateConfig={templateConfig}>
         <LayoutContextProvider templateConfig={templateConfig}>
           <SidebarContextProvider templateConfig={templateConfig}>
-            <NavContextProvider siteNavConfig={siteNavConfig}
-                                siteRoutes={siteRoutes}
-                                siteApiRoutes={siteApiRoutes}
+            <NavContextProvider navConfig={navConfig}
+                                routes={routes}
+                                apiRoutes={apiRoutes}
             >
               {children}
             </NavContextProvider>
@@ -48,12 +40,8 @@ export default AppContextProvider;
 AppContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
   templateConfig: PropTypes.object.isRequired,
-  backgroundDark: PropTypes.object.isRequired,
-  backgroundLight: PropTypes.object.isRequired,
   siteTheme: PropTypes.object.isRequired,
-  textDark: PropTypes.object.isRequired,
-  textLight: PropTypes.object.isRequired,
-  siteNavConfig: PropTypes.array.isRequired,
-  siteRoutes: PropTypes.object.isRequired,
-  siteApiRoutes: PropTypes.object.isRequired,
+  navConfig: PropTypes.array.isRequired,
+  routes: PropTypes.object.isRequired,
+  apiRoutes: PropTypes.object.isRequired
 };

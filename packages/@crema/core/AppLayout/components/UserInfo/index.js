@@ -1,7 +1,7 @@
 import React from "react";
 import orange from "@mui/material/colors/orange";
 import { useAuthUser } from "@crema/utility/AuthHooks";
-import { useNavContext } from "@crema/utility/AppContextProvider/NavContextProvider";
+import { useNavContext, useNavActionsContext } from "@crema/utility/AppContextProvider/NavContextProvider";
 import { Box } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
@@ -14,7 +14,8 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 
 const UserInfo = ({ color }) => {
-  const { routes, doLogOut } = useNavContext();
+  const { routes } = useNavContext();
+  const { doLogOut } = useNavActionsContext();
   const { user } = useAuthUser();
   const history = useRouter();
 
