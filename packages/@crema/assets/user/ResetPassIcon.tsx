@@ -1,23 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { IconComponentProps } from "@crema/types/IconComponentProps";
 
-
-export const ResetPassIcon = ({ className, color }) => {
+export const ResetPassIcon = ({ className, color }: IconComponentProps) => {
   return (
-    <svg viewBox="0 0 500 500">
-      <g id="freepik--Floor--inject-3">
-        <path id="freepik--floor--inject-3"
+    <svg className={className} viewBox="0 0 500 500">
+      <g id="Floor--inject-3">
+        <path id="floor--inject-3"
               d="M88.45,442.21c90.2,53.24,236.46,53.24,326.67,0s90.21-139.56,0-192.79-236.47-53.24-326.68,0S-1.76,389,88.45,442.21Z"
               fill="#f5f5f5" />
       </g>
-      <g id="freepik--Shadow--inject-3">
-        <ellipse id="freepik--Shadows--inject-3"
+      <g id="Shadow--inject-3">
+        <ellipse id="Shadows--inject-3"
                  cx="391.14" cy="405.54"
                  rx="44.19" ry="25.51"
                  fill="#e0e0e0" />
       </g>
-      <g id="freepik--Clouds--inject-3">
-        <g id="freepik--clouds--inject-3">
+      <g id="Clouds--inject-3">
+        <g id="clouds--inject-3">
           <path
             d="M363.42,77.14l7.67,4.43a9,9,0,0,1-.07-1V78.33c0-4,2.78-5.56,6.2-3.58a12.08,12.08,0,0,1,3.7,3.55c.56-5,4.46-6.82,9.2-4.09,5.12,3,9.27,10.15,9.27,16.07V93.6a8.79,8.79,0,0,1-.78,3.85l6.36,3.68a7.6,7.6,0,0,1,3.44,6c0,2.19-1.54,3.08-3.44,2l-41.55-24a7.6,7.6,0,0,1-3.44-6C360,76.93,361.52,76,363.42,77.14Z"
             fill="#ebebeb" />
@@ -26,8 +25,8 @@ export const ResetPassIcon = ({ className, color }) => {
             fill="#ebebeb" />
         </g>
       </g>
-      <g id="freepik--Plant--inject-3">
-        <g id="freepik--Plants--inject-3">
+      <g id="Plant--inject-3">
+        <g id="Plants--inject-3">
           <path
             d="M73.88,288.62c-.57.31-11,3.28-14.9-1.84s2.55-13.09-1.08-16-13.81,0-16.26-6.17,4.81-8.85.73-15.08c-2.57-3.92-8.89-6.12-9.45-9.75-.92-6.06,9.12-8.85,17.72-3.12s13.79,3.1,16.52,2.71,8.6.47,8.41,10S73.88,288.62,73.88,288.62Z"
             fill={color} />
@@ -39,8 +38,8 @@ export const ResetPassIcon = ({ className, color }) => {
             fill="#fff" />
         </g>
       </g>
-      <g id="freepik--Device--inject-3">
-        <g id="freepik--Laptop--inject-3">
+      <g id="Device--inject-3">
+        <g id="Laptop--inject-3">
           <path
             d="M77.93,295.6a9.29,9.29,0,0,0,4.33,7.19l121.33,70a9.57,9.57,0,0,0,8.66,0l166-95.85a8.13,8.13,0,0,0,0-14.38L256.93,192.56a9.57,9.57,0,0,0-8.66,0l-166,95.85A9.29,9.29,0,0,0,77.93,295.6Z"
             fill="#37474f" />
@@ -112,8 +111,8 @@ export const ResetPassIcon = ({ className, color }) => {
             fill="#263238" />
         </g>
       </g>
-      <g id="freepik--Shield--inject-3">
-        <g id="freepik--shield--inject-3">
+      <g id="Shield--inject-3">
+        <g id="shield--inject-3">
           <path
             d="M318.38,173.64h0l-.06,0-8.13-4.68c-.47-.21-1.16,0-2,.62-7.56,5.78-17.73,7.58-26,4.94a20.65,20.65,0,0,1-1.52-1.58l-.15-.17h0a3.19,3.19,0,0,0-.84-.69l-.14-.08-8.14-4.67c-.93-.44-1.77,0-2.33,1.38-7.86,19.53-24.61,39.32-35.78,44.27a6.32,6.32,0,0,0-2.2,1.64,4.69,4.69,0,0,0-1.24,3.2l1.61,43.85c0,12.67,5.35,26.05,16.26,32.56l8.42,4.86.15.08a29.62,29.62,0,0,0,14.92,3.79c1.17,0,2.36-.05,3.59-.17a12,12,0,0,0,6.36-3.18c24.41-25.21,36.28-59.33,36.28-78.21L319,175.48C319.06,174.49,318.82,173.88,318.38,173.64Z"
             fill={color} />
@@ -145,8 +144,8 @@ export const ResetPassIcon = ({ className, color }) => {
             fill="#37474f" />
         </g>
       </g>
-      <g id="freepik--Key--inject-3">
-        <g id="freepik--key--inject-3">
+      <g id="Key--inject-3">
+        <g id="key--inject-3">
           <path
             d="M115.92,395.34v3.9c0,4.6,3,9.19,9.08,12.7,9.14,5.27,22.56,6.56,33.81,3.87l10.44,6,8-1.82,5.47,3.17.3,6.61,3,1.71,7.41.65,5.32,3v3.73l6.69,3.85h17l6.09-3.51v-3.94l-54.34-27.43a12.54,12.54,0,0,0,3.76-8.54v-4c-.82-3.82-4-5.79-9.07-8.72-12.11-7-31.73-7-43.84,0C119.56,389.77,116.47,391.23,115.92,395.34Zm16.64-4.57a13.73,13.73,0,0,1,12.42,0c3.43,2,3.43,5.19,0,7.17a13.73,13.73,0,0,1-12.42,0C129.13,396,129.13,392.75,132.56,390.77Z"
             fill={color} />
@@ -187,8 +186,8 @@ export const ResetPassIcon = ({ className, color }) => {
             style={{ opacity: 0.15 }} />
         </g>
       </g>
-      <g id="freepik--Character--inject-3">
-        <g id="freepik--character--inject-3">
+      <g id="Character--inject-3">
+        <g id="character--inject-3">
           <path
             d="M414.53,288.56c.71-26-1.38-32.29-8.32-37.06l-2.68,15.09s3.16,17.79,2.82,23.71c-.3,5.21-.81,11.72-2,15.92a3.2,3.2,0,0,1-1.38,1.79,18.06,18.06,0,0,0-3.81,3.63c-1,1.09-1.92,1.36-1.79,1.71a1.72,1.72,0,0,0,2.2.77,11.26,11.26,0,0,0,2.5-1.36,15.7,15.7,0,0,1-2.56,4.41c-2.48,3-2.59,4.9,2.41,4.95,3.14,0,5.64-1.91,8-8.81a56.31,56.31,0,0,0,2.2-7.75C413.27,298.73,414.42,292.75,414.53,288.56Z"
             fill="#b16668" />
@@ -249,10 +248,4 @@ export const ResetPassIcon = ({ className, color }) => {
       </g>
     </svg>
   );
-};
-
-
-ResetPassIcon.propTypes = {
-  color: PropTypes.string,
-  className: PropTypes.string
 };

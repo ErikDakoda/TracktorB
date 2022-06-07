@@ -1,28 +1,28 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { IconComponentProps } from '@crema/types/IconComponentProps';
+import clsx from "clsx";
 
-
-export const Error401Icon = ({ className, color }) => {
+export const Error401Icon = ({ className, color }: IconComponentProps) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-      <g id="freepik--Floor--inject-2">
-        <ellipse id="freepik--floor--inject-2" cx="250" cy="344.33" rx="237.96"
+    <svg className={clsx('error-401-icon', className)} viewBox="0 0 500 500">
+      <g id="Floor--inject-2">
+        <ellipse id="floor--inject-2" cx="250" cy="344.33" rx="237.96"
                  ry="135.52"
                  fill="#f5f5f5" />
       </g>
-      <g id="freepik--Shadows--inject-2">
-        <ellipse id="freepik--Shadow--inject-2" cx="391.46" cy="369.93"
+      <g id="Shadows--inject-2">
+        <ellipse id="Shadow--inject-2" cx="391.46" cy="369.93"
                  rx="64.02" ry="36.96"
                  fill="#e6e6e6" />
-        <path id="freepik--shadow--inject-2"
+        <path id="shadow--inject-2"
               d="M367.87,399.42,292.65,356a1,1,0,0,1,0-1.84l5.8-3.35a3.52,3.52,0,0,1,3.19,0l75.22,43.43a1,1,0,0,1,0,1.84l-5.81,3.35A3.5,3.5,0,0,1,367.87,399.42Z"
               fill="#e6e6e6" />
-        <path id="freepik--shadow--inject-2"
+        <path id="shadow--inject-2"
               d="M54.79,410.87,82.65,427A17,17,0,0,0,98,427l161.11-93c4.24-2.45,4.24-6.42,0-8.87L231.25,309a17,17,0,0,0-15.36,0L54.79,402C50.55,404.45,50.55,408.42,54.79,410.87Z"
               fill="#e6e6e6" />
       </g>
-      <g id="freepik--Plant--inject-2">
-        <g id="freepik--Plants--inject-2">
+      <g id="Plant--inject-2">
+        <g id="Plants--inject-2">
           <path
             d="M70.55,399.89c.44-11.46.75-22.81-4.67-39.26-4.55-13.81-17.71-27.79-26.21-28.1-11.23-.41-12.56,7.57-6.78,15.86,4.28,6.13,18.34,14.19,24.82,29.14a66.84,66.84,0,0,1,5.23,26.76Z"
             fill={color} />
@@ -41,8 +41,8 @@ export const Error401Icon = ({ className, color }) => {
             fill="#fff" />
         </g>
       </g>
-      <g id="freepik--card-reader--inject-2">
-        <g id="freepik--card-reader--inject-2">
+      <g id="card-reader--inject-2">
+        <g id="card-reader--inject-2">
           <path
             d="M99.42,418.44c-4.17,2.41-9.93,2.07-16.3-1.61L69,408.65A8.48,8.48,0,0,1,65.12,402V219.57a2.69,2.69,0,0,1,1.11-2.48l151.26-87.33a2.69,2.69,0,0,1,2.72.26l14.16,8.18c12.72,7.35,23,25.21,23,39.9V316.21c0,7.35-2.59,12.52-6.77,14.92Z"
             fill="#455a64" />
@@ -321,10 +321,10 @@ export const Error401Icon = ({ className, color }) => {
             fill="#f28f8f" />
         </g>
       </g>
-      <g id="freepik--Character--inject-2">
-        <g id="freepik--character--inject-2">
-          <g id="freepik--character--inject-2">
-            <g id="freepik--Arm--inject-2">
+      <g id="Character--inject-2">
+        <g id="character--inject-2">
+          <g id="character--inject-2">
+            <g id="Arm--inject-2">
               <path
                 d="M364.92,162.13c-4.54,10.15-8.34,20.94-11.69,25.33-6.83,4.18-24.1,12.76-30.64,14.38a4.91,4.91,0,0,1-3.41-.41c-2.81-1.41-4.86-1.45-7.71-2.09-2.24-.5-3.27-1.42-3.63-1s-.82,1.8.66,3.13a23.34,23.34,0,0,0,3.65,2.42,20.43,20.43,0,0,1-9,1.18c-5.91-.86-8.31,2.21-3.71,8,1.64,2.07,7.52,5,18.51,2.79a102.07,102.07,0,0,0,11.63-2.74c10.38-3.49,21.95-7,29-10a16.66,16.66,0,0,0,6.5-5.7c7.69-12.86,13.56-22.36,17.89-32l-.65-20.61C371.48,144.34,368.72,153.63,364.92,162.13Z"
                 fill="#ffa8a7" />
@@ -427,7 +427,7 @@ export const Error401Icon = ({ className, color }) => {
               d="M422.75,145c6.56,1.57,11.33,3.7,13.36,5.33s4.06,10.54,5,16.22,4.06,27,4.16,29.44-12.82,26.73-12.82,26.73-4.87-6.57-12.23-8.78l7.3-19.35-7.71-27.83S415.47,157.76,422.75,145Z"
               fill="#37474f" />
           </g>
-          <g id="freepik--exclamation-marks--inject-2">
+          <g id="exclamation-marks--inject-2">
             <path
               d="M363.51,85a1,1,0,0,1,.08-.75,1,1,0,0,1,.57-.47l4.37-1.32a1,1,0,0,1,1.21.65l1.06,3.5a.92.92,0,0,1-.08.74,1,1,0,0,1-.57.48l-4.37,1.31a1,1,0,0,1-1.21-.65Zm-5.7-18.87a1,1,0,0,1,.65-1.22l4.37-1.32a1,1,0,0,1,.74.08.92.92,0,0,1,.47.57l4.51,14.93a1,1,0,0,1-.65,1.21l-4.36,1.32a.92.92,0,0,1-.74-.08.93.93,0,0,1-.48-.57Z"
               fill={color} />
@@ -442,8 +442,8 @@ export const Error401Icon = ({ className, color }) => {
           </g>
         </g>
       </g>
-      <g id="freepik--id-card--inject-2">
-        <g id="freepik--id-card--inject-2">
+      <g id="id-card--inject-2">
+        <g id="id-card--inject-2">
           <path
             d="M369.68,237.08,304.19,199.3a2.69,2.69,0,0,0-2.74-.29c-.68.36-3,1.67-4.19,2.4l-.18.1a1.31,1.31,0,0,0-.47.4,2.79,2.79,0,0,0-.36.47.29.29,0,0,1-.08.18c0,.14-.1.33-.13.51a3.58,3.58,0,0,0-.12,1V347.38a8.51,8.51,0,0,0,3.9,6.74L365.32,392a3.4,3.4,0,0,0,1.34.46,2,2,0,0,0,1.26-.13c.07,0,.1,0,.18-.08l4.33-2.5a2.7,2.7,0,0,0,1.15-2.53V243.87A8.66,8.66,0,0,0,369.68,237.08Zm-28.86,6.46-16.63-9.6a9.85,9.85,0,0,1-4.6-7.61c0-2.74,2.06-3.8,4.6-2.31l1.94,1.11,14.69,8.48A9.83,9.83,0,0,1,345,239a6.6,6.6,0,0,1,.43,2.27C345.4,244,343.34,245,340.82,243.54Z"
             fill={color} />
@@ -545,8 +545,8 @@ export const Error401Icon = ({ className, color }) => {
             style={{ opacity: 0.15 }} />
         </g>
       </g>
-      <g id="freepik--error-401--inject-2">
-        <g id="freepik--Text--inject-2">
+      <g id="error-401--inject-2">
+        <g id="Text--inject-2">
           <path
             d="M103,131.14a.76.76,0,0,1-1-.07,1.74,1.74,0,0,1-.41-1.28v-8.11l-16.28,9.4a.75.75,0,0,1-1-.07,1.7,1.7,0,0,1-.41-1.28V121.3a10.45,10.45,0,0,1,.67-3.81l15.45-38.91a7.59,7.59,0,0,1,.85-1.65A3.66,3.66,0,0,1,102,76l7.8-4.5a.75.75,0,0,1,1,.07,1.71,1.71,0,0,1,.41,1.27v30.55l4.44-2.57a.75.75,0,0,1,1,.07,1.7,1.7,0,0,1,.42,1.28v8.43a4,4,0,0,1-.42,1.75,2.54,2.54,0,0,1-1,1.2l-4.44,2.57v8.11a4.11,4.11,0,0,1-.41,1.75,2.64,2.64,0,0,1-1,1.21Zm-1.13-22.34V94.16l-7.55,19Z"
             fill={color} />
@@ -614,10 +614,4 @@ export const Error401Icon = ({ className, color }) => {
       </g>
     </svg>
   );
-};
-
-
-Error401Icon.propTypes = {
-  color: PropTypes.string,
-  className: PropTypes.string
 };

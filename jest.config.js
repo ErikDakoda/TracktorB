@@ -41,6 +41,10 @@ const commonConfig = {
       "<rootDir>/node_modules/@vulcanjs/$1",
       "<rootDir>/packages/@vulcanjs/$1",
     ],
+    "@crema/(.*)/(.*)": [
+      "<rootDir>/node_modules/@crema/$1",
+      "<rootDir>/packages/@crema/$1",
+    ],
     // Handle CSS imports (with CSS modules)
     // https://jestjs.io/docs/webpack#mocking-css-modules
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",

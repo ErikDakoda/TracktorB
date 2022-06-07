@@ -1,23 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { IconComponentProps } from "@crema/types/IconComponentProps";
 
-
-export const ForgotPassIcon = ({ className, color }) => {
+export const ForgotPassIcon = ({ className, color }: IconComponentProps) => {
   return (
-    <svg viewBox="0 0 500 500" className={className}>
-      <g id="freepik--Floor--inject-3">
-        <ellipse id="freepik--floor--inject-3" cx="250" cy="341.91" rx="235.59"
+    <svg className={className} viewBox="0 0 500 500">
+      <g id="Floor--inject-3">
+        <ellipse id="floor--inject-3" cx="250" cy="341.91" rx="235.59"
                  ry="136.02" fill="#f0f0f0" />
       </g>
-      <g id="freepik--Shadow--inject-3">
-        <ellipse id="freepik--shadow--inject-3"
+      <g id="Shadow--inject-3">
+        <ellipse id="shadow--inject-3"
                  cx="201.25" cy="398.08"
                  rx="81.24" ry="46.9"
 
                  fill="#e0e0e0" />
       </g>
-      <g id="freepik--Plants--inject-3">
-        <g id="freepik--plants--inject-3">
+      <g id="Plants--inject-3">
+        <g id="plants--inject-3">
           <path
             d="M432.28,339.4l-9.53-5.5s-2.33-20.4-.78-36.2c2.18-22.2,16.52-48.92,33.62-42.64s-7.84,28.88-13.39,47.71S432.28,339.4,432.28,339.4Z"
             fill={color} />
@@ -34,7 +33,7 @@ export const ForgotPassIcon = ({ className, color }) => {
             d="M434.69,341.35h0a.59.59,0,0,0,.58-.58c-.14-31.2,29.15-52.28,29.45-52.49a.56.56,0,0,0,.13-.8.58.58,0,0,0-.8-.14c-.3.21-30.07,21.65-29.94,53.43A.58.58,0,0,0,434.69,341.35Z"
             fill="#fff" />
         </g>
-        <g id="freepik--plants--inject-3">
+        <g id="plants--inject-3">
           <path
             d="M79.66,327.15l8.8-5.94s3.87-23,.27-43.29C83.67,249.46,64,240,57,243s-8.5,11.47,4.57,27.71C69.32,280.26,79.39,300.65,79.66,327.15Z"
             fill={color} />
@@ -56,8 +55,8 @@ export const ForgotPassIcon = ({ className, color }) => {
             fill="#fff" />
         </g>
       </g>
-      <g id="freepik--speech-bubble--inject-3">
-        <g id="freepik--speach-bubble--inject-3">
+      <g id="speech-bubble--inject-3">
+        <g id="speach-bubble--inject-3">
           <path
             d="M301.16,309.74l-3.79-2.19a4.78,4.78,0,0,1-2.17-3.75V146.28a4.8,4.8,0,0,1,2.16-3.75L402.71,81.71a4.79,4.79,0,0,1,4.33,0l3.79,2.19A4.78,4.78,0,0,1,413,87.65V245.17a4.8,4.8,0,0,1-2.16,3.75L305.49,309.75A4.76,4.76,0,0,1,301.16,309.74Z"
             fill="#455a64" />
@@ -116,8 +115,8 @@ export const ForgotPassIcon = ({ className, color }) => {
             fill="#fafafa" />
         </g>
       </g>
-      <g id="freepik--question-marks--inject-3">
-        <g id="freepik--question-marks--inject-3">
+      <g id="question-marks--inject-3">
+        <g id="question-marks--inject-3">
           <path
             d="M247.38,38.39a18.76,18.76,0,0,1,4.94,1.86,14.19,14.19,0,0,1,3.93,3.12,11.26,11.26,0,0,1,2.32,4.2,10,10,0,0,1,.1,5.09,10.36,10.36,0,0,1-1.55,3.72,12.65,12.65,0,0,1-2.44,2.56,19.45,19.45,0,0,1-2.91,1.87l-2.88,1.53a15.76,15.76,0,0,0-2.46,1.59A4.72,4.72,0,0,0,244.89,66a2.2,2.2,0,0,1-.73.94,1.28,1.28,0,0,1-1.1.23l-4.24-.94a1.57,1.57,0,0,1-1-.69,1.29,1.29,0,0,1-.19-1.15,10.12,10.12,0,0,1,1.77-3.62A14.12,14.12,0,0,1,242,58.24a20.91,20.91,0,0,1,3-1.83c1-.51,2-1,2.87-1.49a13,13,0,0,0,2.27-1.55,3.61,3.61,0,0,0,1.21-2,4.32,4.32,0,0,0-1-3.88,7.75,7.75,0,0,0-4.44-2.41q-4.74-1.05-8,3.19a3.07,3.07,0,0,1-.78.79,1.47,1.47,0,0,1-1.11.08l-4.51-1a1.24,1.24,0,0,1-.79-.52,1.22,1.22,0,0,1-.17-1,8.94,8.94,0,0,1,2.08-3.72,13.93,13.93,0,0,1,3.89-3,16.81,16.81,0,0,1,5.11-1.7A14.9,14.9,0,0,1,247.38,38.39Zm-4.79,32.18a1.56,1.56,0,0,1,1.17,1.84l-1.08,4.9a1.48,1.48,0,0,1-.68,1,1.46,1.46,0,0,1-1.16.22L236,77.42a1.45,1.45,0,0,1-1-.68,1.49,1.49,0,0,1-.21-1.16l1.09-4.9a1.57,1.57,0,0,1,1.84-1.18Z"
             fill={color} />
@@ -138,8 +137,8 @@ export const ForgotPassIcon = ({ className, color }) => {
           </g>
         </g>
       </g>
-      <g id="freepik--Character--inject-3">
-        <g id="freepik--character--inject-3">
+      <g id="Character--inject-3">
+        <g id="character--inject-3">
           <path
             d="M206.53,179.21H171V93.13a28.19,28.19,0,0,1,28.19-28.19h3.28a28.19,28.19,0,0,1,28.19,28.19v62A24.13,24.13,0,0,1,206.53,179.21Z"
             fill="#263238" />
@@ -227,10 +226,4 @@ export const ForgotPassIcon = ({ className, color }) => {
       </g>
     </svg>
   );
-};
-
-
-ForgotPassIcon.propTypes = {
-  color: PropTypes.string,
-  className: PropTypes.string
 };

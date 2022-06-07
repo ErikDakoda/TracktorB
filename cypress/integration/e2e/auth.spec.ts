@@ -35,7 +35,7 @@ describe("auth", () => {
   it("login as admin from home and logout", () => {
     // 1. can visit the page
     cy.visit("/");
-    cy.findByText(/login/i).click();
+    cy.findByText(/log in/i).click();
     cy.url().should("match", /login/);
     // 2. can login
     cy.findByLabelText(/email/i).type(Cypress.env("ADMIN_EMAIL"));
@@ -43,12 +43,12 @@ describe("auth", () => {
     // value in your local .env.development.local (it's safe, it's not tracked by git)
     // this is necessary for this test to pass
     cy.findByLabelText(/password/i).type(Cypress.env("ADMIN_INITIAL_PASSWORD"));
-    cy.findByRole("button").click();
+    cy.findByTestId("login-submit").click();
     cy.url().should("match", /\/$/);
     // 3. logout
-    cy.findByText(/logout/i).click();
-    cy.findByText(/logout/i).should("not.exist");
-    cy.findByText(/login/i).should("exist");
+    cy.findByText(/log out/i).click();
+    cy.findByText(/log out/i).should("not.exist");
+    cy.findByText(/log in/i).should("exist");
   });
   /*
   it("signup from home", () => {
@@ -61,8 +61,8 @@ describe("auth", () => {
     cy.url().should("match", /signup/);
     cy.findByLabelText(/email/i).type(newMember.email);
     cy.findByLabelText(/^password/i).type(newMember.password);
-    cy.findByLabelText(/repeat password/i).type(newMember.password);
-    cy.findByRole("button", { name: /signup/i }).click();
+    cy.findByLabelText(/retype password/i).type(newMember.password);
+    cy.findByRole("button", { name: /sign up/i }).click();
     // Signing up doesn't automatically log you in
     // TODO: in the future, we will add email verification as well
     cy.url().should("match", /login/);
@@ -81,12 +81,12 @@ describe("auth", () => {
     //intercept signup request
     cy.intercept("POST", apiRoutes.account.signup.href).as("signupRequest");
 
-    cy.findByText(/signup/i).click();
+    cy.findByText(/sign up/i).click();
     cy.url().should("match", /signup/);
     cy.findByLabelText(/email/i).type(email);
     cy.findByLabelText(/^password/i).type(password);
-    cy.findByLabelText(/repeat password/i).type(password);
-    cy.findByRole("button", { name: /signup/i }).click();
+    cy.findByLabelText(/retype password/i).type(password);
+    cy.findByRole("button", { name: /sign up/i }).click();
 
     cy.wait("@signupRequest");
     cy.get("@signupRequest").its("response.body").should("exist");
@@ -135,7 +135,7 @@ describe("auth", () => {
       cy.url().should("match", /login\?s=verified/);
       cy.findByLabelText(/email/i).type(email);
       cy.findByLabelText(/password/i).type(password);
-      cy.findByRole("button").click();
+      cy.findByRole("button", { name: /log in/i }).click();
       cy.url().should("match", /\/$/);
     });
   });
@@ -143,7 +143,7 @@ describe("auth", () => {
     cy.visit("/account/login");
     cy.findByLabelText(/email/i).type(Cypress.env("ADMIN_EMAIL"));
     cy.findByLabelText(/password/i).type(Cypress.env("ADMIN_INITIAL_PASSWORD"));
-    cy.findByRole("button").click();
+    cy.findByRole("button", { name: /log in/i }).click();
     // Go to the password change page
     cy.findByText(/profile/i).click();
     cy.url().should("match", /profile/);
@@ -178,10 +178,10 @@ describe("auth", () => {
     });
     /**
        * We wait for the reponse to be there, so that there are greater chances that the mail has been sent by the mail server
-       * 
+       *
        * If this test is flaky (works locally but sometimes fails in other context for no reason), use this tip to retry the call
        * using cypress-recurse:
-       * 
+       *
         // call the task every second for up to 20 seconds
         // until it returns a string result
         recurse(
@@ -217,7 +217,7 @@ describe("auth", () => {
       cy.url().should("match", /login/);
       cy.findByLabelText(/email/i).type(email);
       cy.findByLabelText(/password/i).type(newPassword);
-      cy.findByRole("button").click();
+      cy.findByRole("button", { name: /log in/i }).click();
       cy.url().should("match", /\/$/);
     });
   });

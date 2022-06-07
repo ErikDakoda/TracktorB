@@ -2,7 +2,7 @@ import * as React from 'react';
 import {DataGrid} from '@mui/x-data-grid';
 import {useDemoData} from '@mui/x-data-grid-generator';
 import {createTheme, darken, lighten} from '@mui/material/styles';
-import {makeStyles} from '@mui/styles';
+import {makeStyles} from '@mui/material/styles';
 
 const defaultTheme = createTheme();
 const useStyles = makeStyles(

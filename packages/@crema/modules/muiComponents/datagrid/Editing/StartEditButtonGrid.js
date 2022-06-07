@@ -8,7 +8,7 @@ import {
   randomUpdatedDate,
 } from '@mui/x-data-grid-generator';
 import {createTheme} from '@mui/material/styles';
-import {makeStyles} from '@mui/styles';
+import {makeStyles} from '@mui/material/styles';
 
 const defaultTheme = createTheme();
 const useStyles = makeStyles(

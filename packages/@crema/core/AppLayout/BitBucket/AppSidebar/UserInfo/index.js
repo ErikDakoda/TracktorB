@@ -1,6 +1,6 @@
 import React from 'react';
 import orange from '@mui/material/colors/orange';
-import {useAuthMethod, useAuthUser} from '@crema/utility/AuthHooks';
+import {useAuthUser} from '@crema/utility/AuthHooks';
 import {Box} from '@mui/material';
 import {alpha} from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';
@@ -8,9 +8,10 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import {useRouter} from 'next/router';
+import { useNavActionsContext } from "@crema/utility/AppContextProvider/NavContextProvider";
 
 const UserInfo = () => {
-  const {logout} = useAuthMethod();
+  const { doLogOut } = useNavActionsContext();
   const {user} = useAuthUser();
   const history = useRouter();
 
@@ -155,7 +156,7 @@ const UserInfo = () => {
             px: 6,
             py: 1.5,
           }}
-          onClick={logout}
+          onClick={doLogOut}
         >
           Logout
         </MenuItem>

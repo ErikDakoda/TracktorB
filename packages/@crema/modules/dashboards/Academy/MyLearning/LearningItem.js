@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import AppCircularProgress from '@crema/core/AppCircularProgress';
-import {useTheme} from '@mui/material';
+import {useTheme} from '@mui/material/styles';
 import {alpha} from '@mui/material/styles';
 import PropTypes from 'prop-types';
 

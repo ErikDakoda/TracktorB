@@ -2,7 +2,7 @@ import * as React from 'react';
 import {DataGrid, useGridApiContext, useGridState} from '@mui/x-data-grid';
 import {useDemoData} from '@mui/x-data-grid-generator';
 import {createTheme} from '@mui/material/styles';
-import {createStyles, makeStyles} from '@mui/styles';
+import {createStyles, makeStyles} from '@mui/material/styles';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 

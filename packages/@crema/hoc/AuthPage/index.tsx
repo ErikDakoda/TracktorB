@@ -5,5 +5,5 @@ import withLayout from './withLayout';
 
 export default function AuthPage(element: (props: object) => React.ReactElement<any>): React.ReactElement<any> {
   // @ts-ignore
-  return compose(withData, withLayout)(element);
+  return compose(withLayout)(element);
 }

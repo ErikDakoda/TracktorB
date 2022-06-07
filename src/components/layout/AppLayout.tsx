@@ -6,12 +6,9 @@
  */
 import { typeScale } from "~/lib/style/typography";
 import Footer from "./Footer";
+import { PropsWithChildren } from "react";
 
-interface AppLayoutProps {
-  children: React.ReactNode;
-}
-
-export const GlobalAppStyle = ({ children }) => (
+export const GlobalAppStyle = ({ children }: PropsWithChildren<{}>) => (
   <div className="global">
     {children}
     <style jsx global>{`
@@ -81,7 +78,7 @@ export const GlobalAppStyle = ({ children }) => (
     `}</style>
   </div>
 );
-const AppLayout = ({ children }: AppLayoutProps) => (
+const AppLayout = ({ children }: PropsWithChildren<{}>) => (
   <GlobalAppStyle>
     <main>{children}</main>
     <Footer />

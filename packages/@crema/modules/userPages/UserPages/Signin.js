@@ -14,9 +14,13 @@ import { grey } from "@mui/material/colors";
 import { Fonts } from "@crema/shared/constants/AppEnums";
 import AppTextField from "@crema/core/AppFormComponents/AppTextField";
 import UserFrame from "@crema/modules/userPages/UserPages/UserFrame";
-import { useNavContext } from "@crema/utility/AppContextProvider/NavContextProvider";
+import {
+  useNavActionsContext,
+  useNavContext
+} from "@crema/utility/AppContextProvider/NavContextProvider";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import NextMuiTextLink from "~/components/ui/NextMuiTextLink";
+import {useRouter} from 'next/router';
 
 const validationSchema = yup.object({
   email: yup
@@ -30,7 +34,10 @@ const validationSchema = yup.object({
 
 const Signin = () => {
   const { messages } = useIntl();
-  const { submitLogIn, routes } = useNavContext();
+  const { routes } = useNavContext();
+  const { submitLogIn } = useNavActionsContext();
+  const router = useRouter();
+  const redirectedFrom = router.query?.from;
 
   return (
     <UserFrame title={<IntlMessages id="common.login" />}>
@@ -44,7 +51,7 @@ const Signin = () => {
         validationSchema={validationSchema}
         onSubmit={async (data, { setErrors }) => {
           try {
-            await submitLogIn(data);
+            await submitLogIn(data, redirectedFrom);
           } catch (error) {
             console.error("An error occurred submitting the log in form:", error);
             setErrors({ email: error.message });
@@ -107,6 +114,7 @@ const Signin = () => {
               </NextMuiTextLink>
             </Box>
             <Button
+              data-testid="login-submit"
               variant="contained"
               color="primary"
               type="submit"

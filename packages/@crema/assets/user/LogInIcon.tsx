@@ -1,22 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { IconComponentProps } from "@crema/types/IconComponentProps";
 
-
-export const LogInIcon = ({ className, color }) => {
+export const LogInIcon = ({ className, color }: IconComponentProps) => {
   return (
-    <svg viewBox="0 0 500 500">
-      <g id="freepik--Floor--inject-18">
+    <svg className={className} viewBox="0 0 500 500">
+      <g id="Floor--inject-18">
         <ellipse cx="250" cy="356.97" rx="208.82" ry="120.56"
                  fill="#f5f5f5" />
       </g>
-      <g id="freepik--Shadows--inject-18">
+      <g id="Shadows--inject-18">
         <ellipse cx="282.77" cy="415.33" rx="45.16" ry="26.07"
                  fill="#e0e0e0" />
         <path
           d="M259.3,327.05,138.51,396.8c-3.4,2-9.33,1.72-13.26-.55L82.37,371.49c-3.92-2.26-4.35-5.69-1-7.65l120.79-69.75c3.4-2,9.33-1.72,13.26.55l42.88,24.76C262.27,321.66,262.7,325.09,259.3,327.05Z"
           fill="#e0e0e0" />
       </g>
-      <g id="freepik--Plants--inject-18">
+      <g id="Plants--inject-18">
         <path
           d="M389.36,351.4l9.52,5.53s-4.8-15.32-2.14-30.74a29.73,29.73,0,0,1,3.87-10.26c.75-1.56,6.49-11.17,1.44-15.61s-16.9,4.39-16.37,28.13A92.24,92.24,0,0,0,389.36,351.4Z"
           fill={color} />
@@ -66,7 +65,7 @@ export const LogInIcon = ({ className, color }) => {
           d="M71.06,345.51a.45.45,0,0,1-.32-.14.43.43,0,0,1,0-.61c7.06-6.45,13-5.13,13.2-5.07a.43.43,0,0,1,.32.52.42.42,0,0,1-.52.32c-.06,0-5.72-1.25-12.42,4.87A.46.46,0,0,1,71.06,345.51Z"
           fill="#fff" />
       </g>
-      <g id="freepik--Device--inject-18">
+      <g id="Device--inject-18">
         <path
           d="M97.61,136.5a16.61,16.61,0,0,1,8.29-14.37L211.42,61.21a5.44,5.44,0,0,1,7.9,3.06,9.47,9.47,0,0,0-4.34-6l-.38-.22a17,17,0,0,0-8.68-2.39h0a5.4,5.4,0,0,0-2.78.74L97.62,117.35a16.58,16.58,0,0,0-8.3,14.37V359.91a5.44,5.44,0,0,0,8.15,4.71l.14-.08Z"
           fill="#37474f" />
@@ -100,7 +99,7 @@ export const LogInIcon = ({ className, color }) => {
           d="M171.83,315.68h0c1.21,0,2,1.29,2,3.28,0,3.12-1.95,6.89-4.27,8.23l-9.71,5.61a3,3,0,0,1-1.44.45c-1.21,0-2-1.29-2-3.28,0-3.13,2-6.9,4.27-8.23l9.71-5.61a3,3,0,0,1,1.45-.45m0-.83a3.68,3.68,0,0,0-1.86.57l-9.71,5.6c-2.59,1.49-4.69,5.5-4.69,9,0,2.57,1.17,4.11,2.83,4.11a3.68,3.68,0,0,0,1.86-.57l9.71-5.6c2.58-1.49,4.68-5.5,4.68-9,0-2.57-1.16-4.11-2.82-4.11Z"
           fill="#263238" />
       </g>
-      <g id="freepik--Screen--inject-18">
+      <g id="Screen--inject-18">
         <path
           d="M118.19,163.71v215c0,3.9,1.43,6.51,3.61,7.37l.06,0h0l9.3,5.09-.06-8.26-1-222.93-9.81-5A21.16,21.16,0,0,0,118.19,163.71Z"
           fill="#e6e6e6" />
@@ -201,7 +200,7 @@ export const LogInIcon = ({ className, color }) => {
           </tspan>
         </text>
       </g>
-      <g id="freepik--Fingerprint--inject-18">
+      <g id="Fingerprint--inject-18">
         <path
           d="M341.39,128.31a5,5,0,0,0,2.31,3.93c1.28.72,2.31.13,2.31-1.31A5,5,0,0,0,343.7,127C342.43,126.28,341.39,126.86,341.39,128.31Z"
           fill="#455a64" />
@@ -257,7 +256,7 @@ export const LogInIcon = ({ className, color }) => {
           d="M369.76,142.15a.51.51,0,0,1-.5-.45l-.29-2.92a.51.51,0,0,1,.45-.55.49.49,0,0,1,.55.45l.29,2.92a.5.5,0,0,1-.45.55Z"
           fill="#fff" />
       </g>
-      <g id="freepik--face-recognition--inject-18">
+      <g id="face-recognition--inject-18">
         <path
           d="M412.59,211.54l-49-27.75a3,3,0,0,0-3.55,0l-4.24,2.92,2.89,3.57v51.63c0,3.61,2.2,7.8,4.9,9.37l47.77,27,.22,3.84,4.46-3.05a4.61,4.61,0,0,0,1.44-3.8v-54.4C417.5,217.29,415.3,213.1,412.59,211.54Z"
           fill={color} />
@@ -302,7 +301,7 @@ export const LogInIcon = ({ className, color }) => {
           d="M294.31,161.54a4.06,4.06,0,0,0,1.87,3.18c1,.58,1.87.11,1.87-1.06a4.06,4.06,0,0,0-1.87-3.18C295.15,159.9,294.31,160.37,294.31,161.54Z"
           fill="#455a64" />
       </g>
-      <g id="freepik--Character--inject-18">
+      <g id="Character--inject-18">
         <path
           d="M308.38,253.2s7.29-.49,11.42,9.64c2.57,6.3,5.7,16,7.7,22.5a10.44,10.44,0,0,1-3.26,11.08l-12.71,10.67L307,298.82a87.18,87.18,0,0,1,8.69-9.93L307,262.84Z"
           fill="#ffa8a7" />
@@ -394,10 +393,4 @@ export const LogInIcon = ({ className, color }) => {
       </g>
     </svg>
   );
-};
-
-
-LogInIcon.propTypes = {
-  color: PropTypes.string,
-  className: PropTypes.string
 };

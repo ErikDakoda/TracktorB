@@ -5,5 +5,5 @@ import withData from './withData';
 
 export default function PublicPage(element: (props: object) => React.ReactElement<any>): React.ReactElement<any> {
   // @ts-ignore
-  return compose(withData, withLayout)(element);
+  return compose(withLayout)(element);
 }

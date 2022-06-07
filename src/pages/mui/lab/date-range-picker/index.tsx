@@ -3,6 +3,6 @@ import asyncComponent from '@crema/utility/asyncComponent';
 import AppPage from '@crema/hoc/AppPage';
 
 const DateRangePicker = asyncComponent(
-  () => import('@crema/modules/muiComponents/lab/DateRangePicker'),
+  () => import('@crema/modules/muiComponents/lab/dateTime/DateRangePicker'),
 );
 export default AppPage(() => <DateRangePicker />);

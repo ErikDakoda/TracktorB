@@ -1,10 +1,10 @@
 import { serialize, parse } from "cookie";
-import { Request, Response } from "express";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export const TOKEN_NAME = "token";
 const MAX_AGE = 60 * 60 * 8; // 8 hours
 
-export function setTokenCookie(res: Response, token: string) {
+export function setTokenCookie(res: NextApiResponse, token: string) {
   const cookie = serialize(TOKEN_NAME, token, {
     maxAge: MAX_AGE,
     expires: new Date(Date.now() + MAX_AGE * 1000),
@@ -17,7 +17,7 @@ export function setTokenCookie(res: Response, token: string) {
   res.setHeader("Set-Cookie", cookie);
 }
 
-export function removeTokenCookie(res: Response) {
+export function removeTokenCookie(res: NextApiResponse) {
   const cookie = serialize(TOKEN_NAME, "", {
     maxAge: -1,
     path: "/",
@@ -26,7 +26,7 @@ export function removeTokenCookie(res: Response) {
   res.setHeader("Set-Cookie", cookie);
 }
 
-export function parseCookies(req: Request) {
+export function parseCookies(req: NextApiRequest) {
   // For API Routes we don't need to parse the cookies.
   if (req.cookies) return req.cookies;
 

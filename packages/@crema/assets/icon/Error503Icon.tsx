@@ -1,10 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { IconComponentProps } from '@crema/types/IconComponentProps';
+import clsx from "clsx";
 
-
-export const Error503Icon = ({ className, color }) => {
+export const Error503Icon = ({ className, color }: IconComponentProps) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <svg className={clsx('error-503-icon', className)} viewBox="0 0 500 500">
       <g id="freepik--Floor--inject-10">
         <ellipse id="freepik--floor--inject-10" cx="250" cy="384.61" rx="209.73"
                  ry="94.79"
@@ -705,10 +705,4 @@ export const Error503Icon = ({ className, color }) => {
       </g>
     </svg>
   );
-};
-
-
-Error503Icon.propTypes = {
-  color: PropTypes.string,
-  className: PropTypes.string
 };

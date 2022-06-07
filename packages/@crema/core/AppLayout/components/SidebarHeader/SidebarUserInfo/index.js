@@ -6,17 +6,18 @@ import Box from '@mui/material/Box';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {Typography} from '@mui/material';
 import {alpha} from '@mui/material/styles';
-import {useAuthMethod, useAuthUser} from '@crema/utility/AuthHooks';
+import {useAuthUser} from '@crema/utility/AuthHooks';
 import {useSidebarContext} from '@crema/utility/AppContextProvider/SidebarContextProvider';
 import {Fonts} from '@crema/shared/constants/AppEnums';
 import Status from './Status';
 import {useRouter} from 'next/router';
+import { useNavActionsContext } from "@crema/utility/AppContextProvider/NavContextProvider";
 
 const SidebarUserInfo = () => {
   const {borderColor, sidebarTextColor} = useSidebarContext();
   const {user} = useAuthUser();
   const history = useRouter();
-  const {logout} = useAuthMethod();
+  const { doLogOut } = useNavActionsContext();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -141,7 +142,7 @@ const SidebarUserInfo = () => {
         >
           My account
         </MenuItem>
-        <MenuItem onClick={logout}>Logout</MenuItem>
+        <MenuItem onClick={doLogOut}>Logout</MenuItem>
       </Menu>
     </Box>
   );

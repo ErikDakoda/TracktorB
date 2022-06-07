@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
-import {createStyles, makeStyles} from '@mui/styles';
+import {createStyles, makeStyles} from '@mui/material/styles';
 import {DataGrid} from '@mui/x-data-grid';
 
 const useStyles = makeStyles(() =>

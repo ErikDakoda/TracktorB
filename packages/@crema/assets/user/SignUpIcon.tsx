@@ -1,14 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { IconComponentProps } from "@crema/types/IconComponentProps";
 
-
-export const SignUpIcon = ({ className, color }) => {
+export const SignUpIcon = ({ className, color }: IconComponentProps) => {
   return (
-    <svg viewBox="0 0 500 500">
-      <g id="freepik--Floor--inject-3">
+    <svg className={className} viewBox="0 0 500 500">
+      <g id="Floor--inject-3">
         <ellipse cx="250" cy="350.75" rx="224.57" ry="129.66" fill="#f5f5f5" />
       </g>
-      <g id="freepik--Plant--inject-3">
+      <g id="Plant--inject-3">
         <path
           d="M98.66,330.05l-9.15,5.32s4.62-14.74,2.06-29.56A28.4,28.4,0,0,0,87.85,296c-.72-1.5-6.23-10.74-1.38-15s16.25,4.21,15.73,27A88.7,88.7,0,0,1,98.66,330.05Z"
           fill={color} />
@@ -32,14 +31,14 @@ export const SignUpIcon = ({ className, color }) => {
           d="M83.82,322.78a.39.39,0,0,1-.31-.14s-3.84-4.1-12.48-2.92a.41.41,0,0,1-.48-.36.43.43,0,0,1,.36-.48c9.11-1.25,13.06,3,13.23,3.2a.41.41,0,0,1,0,.59A.38.38,0,0,1,83.82,322.78Z"
           fill="#fff" />
       </g>
-      <g id="freepik--Shadows--inject-3">
+      <g id="Shadows--inject-3">
         <path
           d="M436.11,372,285.2,284.91a17.73,17.73,0,0,0-17.71,0l-53.34,30.8a5.78,5.78,0,0,0,0,10l150.91,87.13a17.73,17.73,0,0,0,17.71,0l53.34-30.8A5.78,5.78,0,0,0,436.11,372Z"
           fill="#e0e0e0" />
         <ellipse cx="147.76" cy="384.29" rx="48.06" ry="27.75"
                  fill="#e0e0e0" />
       </g>
-      <g id="freepik--Device--inject-3">
+      <g id="Device--inject-3">
         <path
           d="M369.92,403.58,248.2,333.31c-8.58-4.95-15.55-18.26-15.55-29.71V43c0-11.45,7-16.71,15.55-11.76L369.92,101.5c8.58,5,15.54,18.25,15.54,29.7V391.83C385.46,403.28,378.5,408.54,369.92,403.58Z"
           fill="#455a64" />
@@ -80,7 +79,7 @@ export const SignUpIcon = ({ className, color }) => {
           d="M320.2,81.83a1.25,1.25,0,0,1-.62-.16L299.33,70.36a1.27,1.27,0,1,1,1.24-2.22l20.25,11.32a1.26,1.26,0,0,1-.62,2.37Z"
           fill="#263238" />
       </g>
-      <g id="freepik--Screen--inject-3">
+      <g id="Screen--inject-3">
         <path
           d="M349,147.91V421.69c0,5-1.83,8.33-4.63,9.42l-.07,0h0l-11.87,6.51.06-10.57,1.32-283.93,12.54-6.42A27.07,27.07,0,0,1,349,147.91Z"
           fill="#e0e0e0" />
@@ -214,7 +213,7 @@ export const SignUpIcon = ({ className, color }) => {
           description
         </text>
       </g>
-      <g id="freepik--Character--inject-3">
+      <g id="Character--inject-3">
         <path
           d="M140.4,361.82s3.24-.71,3.09,3.09c-.16,4,2.79,9.39-4.46,11.33A27.28,27.28,0,0,0,128.4,382c-2.64,2.07-9.77,4.1-15.14,1.7-9.87-4.42,3.56-9.76,3.56-9.76Z"
           fill="#263238" />
@@ -281,10 +280,4 @@ export const SignUpIcon = ({ className, color }) => {
       </g>
     </svg>
   );
-};
-
-
-SignUpIcon.propTypes = {
-  color: PropTypes.string,
-  className: PropTypes.string
 };

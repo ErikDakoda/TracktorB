@@ -11,7 +11,7 @@ import {useDemoData} from '@mui/x-data-grid-generator';
 import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
 import {createTheme} from '@mui/material/styles';
-import {createStyles, makeStyles} from '@mui/styles';
+import {createStyles, makeStyles} from '@mui/material/styles';
 
 function escapeRegExp(value) {
   return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');

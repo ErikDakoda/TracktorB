@@ -29,6 +29,10 @@ const plugins = [
   ],
 ];
 
+if (process.env.NODE_ENV !== 'production') {
+  plugins.push('babel-plugin-typescript-to-proptypes');
+}
+
 // We need babel for code instrumentation
 const enableCoverage = process.env.COVERAGE && process.env.COVERAGE !== "false";
 if (enableCoverage) {

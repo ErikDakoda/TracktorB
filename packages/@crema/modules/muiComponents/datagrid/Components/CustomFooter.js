@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
-import {makeStyles} from '@mui/styles';
+import {makeStyles} from '@mui/material/styles';
 import {useDemoData} from '@mui/x-data-grid-generator';
 import {DataGrid} from '@mui/x-data-grid';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';

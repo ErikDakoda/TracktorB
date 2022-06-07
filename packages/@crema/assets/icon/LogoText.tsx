@@ -1,10 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { IconComponentProps } from "@crema/types/IconComponentProps";
+import clsx from "clsx";
 
-
-export const LogoText = ({ className, color }) => {
+export const LogoText = ({ className, color }: IconComponentProps) => {
   return (
-    <svg viewBox="0 -404 2777.4285 1240">
+    <svg className={clsx('logo-text', className)} viewBox="0 -404 2777.4285 1240">
       <g id="Tagline" fill={color}>
         <path
           d="M0,1.832H24.0454L105.1113,119.08V1.832h26.106v160.3H106.9434l-80.837-116.79v116.79H0Z" />
@@ -58,10 +58,4 @@ export const LogoText = ({ className, color }) => {
       </g>
     </svg>
   );
-};
-
-
-LogoText.propTypes = {
-  color: PropTypes.string,
-  className: PropTypes.string
 };

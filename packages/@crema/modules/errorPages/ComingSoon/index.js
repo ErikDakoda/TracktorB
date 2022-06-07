@@ -13,7 +13,7 @@ import {AppAnimate, AppInfoView} from '@crema';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 
 import {styled} from '@mui/material/styles';
-import Logo from '../../../assets/icon/comingsoon.svg';
+import { ComingSoonIcon } from '@crema/assets/icon/ComingSoonIcon';
 import {useTheme} from '@mui/material/styles';
 
 const FormWrapper = styled(Form)(() => {
@@ -71,7 +71,7 @@ const ComingSoon = () => {
               },
             }}
           >
-            <Logo fill={theme.palette.primary.main} />
+            <ComingSoonIcon color={theme.palette.primary.main} />
           </Box>
 
           <Box

@@ -1,22 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { IconComponentProps } from "@crema/types/IconComponentProps";
 
-
-export const LockScreenIcon = ({ className, color }) => {
+export const LockScreenIcon = ({ className, color }: IconComponentProps) => {
   return (
-    <svg viewBox="0 0 500 500" className={className}>
-      <g id="freepik--Floor--inject-3">
-        <path id="freepik--floor--inject-3"
+    <svg className={className} viewBox="0 0 500 500">
+      <g id="Floor--inject-3">
+        <path id="floor--inject-3"
               d="M107,416.2c80.7,48.76,211.53,48.76,292.22,0s80.69-127.83,0-176.59-211.52-48.76-292.22,0S26.31,367.43,107,416.2Z"
               fill="#f0f0f0" />
       </g>
-      <g id="freepik--Shadow--inject-3">
-        <path id="freepik--floor--inject-3"
+      <g id="Shadow--inject-3">
+        <path id="floor--inject-3"
               d="M406.75,361c7.38,4.46,19.34,4.46,26.72,0s7.37-11.68,0-16.14-19.34-4.46-26.72,0S399.38,356.52,406.75,361Z"
               fill="#e0e0e0" />
       </g>
-      <g id="freepik--Plants--inject-3">
-        <g id="freepik--plants--inject-3">
+      <g id="Plants--inject-3">
+        <g id="plants--inject-3">
           <path
             d="M73.24,302.2s-1.7-15-9.15-26.59S46.41,256.74,36.86,256s-17.26,8-7,14.07,28.37,12.18,36.72,34.75Z"
             fill={color} />
@@ -37,9 +36,9 @@ export const LockScreenIcon = ({ className, color }) => {
             fill="#fff" />
         </g>
       </g>
-      <g id="freepik--Server--inject-3">
-        <g id="freepik--server--inject-3">
-          <g id="freepik--server--inject-3">
+      <g id="Server--inject-3">
+        <g id="server--inject-3">
+          <g id="server--inject-3">
             <path
               d="M315.6,52.44l55.27,31.92a4.09,4.09,0,0,1,1.85,3.2V239.5a4.09,4.09,0,0,1-1.85,3.2L315.6,274.62a4.09,4.09,0,0,1-3.7,0L256.63,242.7a4.07,4.07,0,0,1-1.85-3.2V87.56a4.09,4.09,0,0,1,1.85-3.2L311.9,52.44A4.15,4.15,0,0,1,315.6,52.44Z"
               fill="#37474f" />
@@ -284,8 +283,8 @@ export const LockScreenIcon = ({ className, color }) => {
             fill="#455a64" />
         </g>
       </g>
-      <g id="freepik--Device--inject-3">
-        <g id="freepik--Laptop--inject-3">
+      <g id="Device--inject-3">
+        <g id="Laptop--inject-3">
           <path
             d="M71,347.56a8.79,8.79,0,0,0,4.1,6.81l115,66.37a9.07,9.07,0,0,0,8.21,0l157.28-90.81a7.71,7.71,0,0,0,0-13.63L240.63,249.93a9.11,9.11,0,0,0-8.2,0L75.14,340.74A8.79,8.79,0,0,0,71,347.56Z"
             fill="current" />
@@ -341,7 +340,7 @@ export const LockScreenIcon = ({ className, color }) => {
             style={{ opacity: 0.5 }} />
         </g>
       </g>
-      <g id="freepik--Padlock--inject-3">
+      <g id="Padlock--inject-3">
         <path
           d="M460.37,245.36h0L442,234.76h0c-.41-.22-1-.07-1.72.48-.38.28-.76.56-1.14.82l-.43.27c-.25.16-.5.33-.76.48s-.36.2-.54.31l-.67.37-.62.31-.62.3-.69.29c-.19.08-.38.17-.58.24l-.75.28-.53.19-.81.25-.48.14-.87.22-.44.1c-.3.07-.61.13-.92.18l-.38.07-1,.14-.33,0c-.34,0-.69.07-1,.09l-.27,0-1.08,0h-.22c-.37,0-.74,0-1.11,0h-.17c-.38,0-.77,0-1.15-.08h-.11l-1.19-.16h-.06l-.55-.11-11.4-6.58h0c-.84-.47-1.61-.13-2.11,1.1-6.62,16.44-20.72,33.11-30.12,37.28a4,4,0,0,0-.54.28,3.15,3.15,0,0,0-.33.22l-.15.1-.41.35,0,0c-.14.13-.27.27-.4.41h0a4,4,0,0,0-1.05,2.68l1.36,16.7c0,10.77,4.58,22.13,13.93,27.56h0l18.38,10.59h0l.13.07h0a25.86,25.86,0,0,0,15.59,3.05,10.11,10.11,0,0,0,5.35-2.68c20.56-21.23,30.55-50,30.55-65.86l1.36-18.4C460.94,246.08,460.73,245.57,460.37,245.36Z"
           fill={color} />
@@ -374,10 +373,4 @@ export const LockScreenIcon = ({ className, color }) => {
       </g>
     </svg>
   );
-};
-
-
-LockScreenIcon.propTypes = {
-  color: PropTypes.string,
-  className: PropTypes.string
 };
