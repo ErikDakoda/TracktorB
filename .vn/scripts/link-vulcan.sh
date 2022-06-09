@@ -24,3 +24,8 @@
 ./node_modules/.bin/yalc link @vulcanjs/react-hooks
 ./node_modules/.bin/yalc link @vulcanjs/schema
 ./node_modules/.bin/yalc link @vulcanjs/utils
+
+./node_modules/.bin/yalc link @vulcanjs/next-apollo
+./node_modules/.bin/yalc link @vulcanjs/next-mui
+./node_modules/.bin/yalc link @vulcanjs/next-style-collector
+./node_modules/.bin/yalc link @vulcanjs/next-utils

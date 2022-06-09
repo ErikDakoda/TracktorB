@@ -5082,6 +5082,27 @@
   optionalDependencies:
     msw "^0.35.0"
 
+"@vulcanjs/graphql@0.6.9-alpha.0":
+  version "0.6.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vulcanjs/graphql/-/graphql-0.6.9-alpha.0.tgz#e3d618372e4c8d59bf8112e1a5c856c452865245"
+  integrity sha512-5qWLcQZ+76qf74R/UQDGaphOpc1VuZhhsqBffi23gS01Gt10RQ9n7h0icipqrLxFGG57w0t50Z5T4Hg2h/cVUw==
+  dependencies:
+    "@vulcanjs/crud" "^0.6.7"
+    "@vulcanjs/i18n" "^0.6.9-alpha.0"
+    "@vulcanjs/model" "^0.6.7"
+    "@vulcanjs/permissions" "^0.6.7"
+    "@vulcanjs/schema" "^0.6.7"
+    "@vulcanjs/utils" "^0.6.7"
+    apollo-datasource "^3.3.1"
+    debug "^4.3.1"
+    deepmerge "^4.2.2"
+    graphql-date "^1.0.3"
+    graphql-type-json "^0.3.2"
+    lodash "^4.17.21"
+    moment-timezone "^0.5.33"
+  optionalDependencies:
+    msw "^0.35.0"
+
 "@vulcanjs/graphql@^0.6.7":
   version "0.6.7"
   resolved "https://registry.yarnpkg.com/@vulcanjs/graphql/-/graphql-0.6.7.tgz#7e77209de7fc2cffbb619c6c5788d3aed5c61e41"
@@ -5089,6 +5110,27 @@
   dependencies:
     "@vulcanjs/crud" "^0.6.7"
     "@vulcanjs/i18n" "^0.6.7"
+    "@vulcanjs/model" "^0.6.7"
+    "@vulcanjs/permissions" "^0.6.7"
+    "@vulcanjs/schema" "^0.6.7"
+    "@vulcanjs/utils" "^0.6.7"
+    apollo-datasource "^3.3.1"
+    debug "^4.3.1"
+    deepmerge "^4.2.2"
+    graphql-date "^1.0.3"
+    graphql-type-json "^0.3.2"
+    lodash "^4.17.21"
+    moment-timezone "^0.5.33"
+  optionalDependencies:
+    msw "^0.35.0"
+
+"@vulcanjs/graphql@^0.6.9-alpha.0", "@vulcanjs/graphql@^0.6.9-alpha.1":
+  version "0.6.9-alpha.1"
+  resolved "https://registry.yarnpkg.com/@vulcanjs/graphql/-/graphql-0.6.9-alpha.1.tgz#bbd9d2572bcaf30c5b15ed553200c1862f86ac96"
+  integrity sha512-1JBc8JIlNuhBPye2uHvvzNvC9cHr1uUojufoVc4GXMBPwGJCxpcJcy3aBaOdk51G8mN4BZrusAz/1KHyh7Roew==
+  dependencies:
+    "@vulcanjs/crud" "^0.6.7"
+    "@vulcanjs/i18n" "^0.6.9-alpha.0"
     "@vulcanjs/model" "^0.6.7"
     "@vulcanjs/permissions" "^0.6.7"
     "@vulcanjs/schema" "^0.6.7"
@@ -5113,17 +5155,27 @@
     prop-types "^15.7.2"
     simpl-schema "^1.12.0"
 
+"@vulcanjs/i18n@^0.6.9-alpha.0":
+  version "0.6.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vulcanjs/i18n/-/i18n-0.6.9-alpha.0.tgz#7293beca06d486378a687809bee22a5a75c541d0"
+  integrity sha512-wRyimgNyOt3N9CiIsgjeaQwkFfaBja6bo18gl4fGqVjYl1pHONLxT/+97wahbeRNVKDh9Xv/PxDr1qEhF0/JsA==
+  dependencies:
+    "@vulcanjs/schema" "^0.6.7"
+    "@vulcanjs/utils" "^0.6.7"
+    prop-types "^15.7.2"
+    simpl-schema "^1.12.0"
+
 "@vulcanjs/mdx@^0.6.7":
   version "0.6.7"
   resolved "https://registry.yarnpkg.com/@vulcanjs/mdx/-/mdx-0.6.7.tgz#b3eaffe88fda4fd392a1c549c0601d52575b8309"
   integrity sha512-MiBb7RcpZz4iOIe+IDOe4AGyZpvqliZQaNnucLEwicyUqBHEU3oxFM/jDtm5Vmwf3pd07RrjoQKHT52V8dIS2g==
 
-"@vulcanjs/meteor-legacy@^0.6.7":
-  version "0.6.7"
-  resolved "https://registry.yarnpkg.com/@vulcanjs/meteor-legacy/-/meteor-legacy-0.6.7.tgz#3fff5201ecf9cd4db0cf326fdf8899583250a3c1"
-  integrity sha512-FWOAxaDLnH4FZQaBnAjvOlhuiAb+nPivhMae66m+i5LV5QkQ8SB5hxDPJj0QXBGtRC3fayQ7W406Yh88jLd0mw==
+"@vulcanjs/meteor-legacy@0.6.9-alpha.0":
+  version "0.6.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vulcanjs/meteor-legacy/-/meteor-legacy-0.6.9-alpha.0.tgz#e2254f5df79cf83f625065649465d219d33a0e02"
+  integrity sha512-LlWHD6ZxoQ9y99FQEcNh2Ejtyy0snyII3A3f1V/Q6zg9SXLCG9ingciFFsT9YEHLr+CNIyWtMefme85o404G1A==
   dependencies:
-    "@vulcanjs/graphql" "^0.6.7"
+    "@vulcanjs/graphql" "^0.6.9-alpha.0"
     lodash "^4.17.21"
 
 "@vulcanjs/model@^0.6.7":
@@ -5134,13 +5186,13 @@
     "@vulcanjs/schema" "^0.6.7"
     lodash "^4.17.21"
 
-"@vulcanjs/mongo-apollo@^0.6.7":
-  version "0.6.7"
-  resolved "https://registry.yarnpkg.com/@vulcanjs/mongo-apollo/-/mongo-apollo-0.6.7.tgz#1fb683b698291c546a1a2a88e4e18d1bf80e3f77"
-  integrity sha512-g4y29ipwKjbVjXNlCAl8K+MeeCqq2yGoufCgPQVKoP3u3E6FJ+8sT4Rke/oI+wGnYXBS3noH8gsbRqc/MVvnVw==
+"@vulcanjs/mongo-apollo@0.6.9-alpha.0":
+  version "0.6.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vulcanjs/mongo-apollo/-/mongo-apollo-0.6.9-alpha.0.tgz#317e3f93a2de5ee87425092c345d27950319f7ab"
+  integrity sha512-beyNitxeWHcYAq0f8C61ruxISOmlRsxBfdzucpxZHk2+HY7TqrCBcN8ddh617OyEfwJG6v19r0p0oezSxf8S/A==
   dependencies:
     "@vulcanjs/crud" "^0.6.7"
-    "@vulcanjs/graphql" "^0.6.7"
+    "@vulcanjs/graphql" "^0.6.9-alpha.0"
     "@vulcanjs/mongo" "^0.6.7"
     "@vulcanjs/utils" "^0.6.7"
     apollo-datasource-mongodb "^0.5.2"
@@ -5168,6 +5220,18 @@
     "@vulcanjs/schema" "^0.6.7"
     lodash "^4.17.21"
 
+"@vulcanjs/react-hooks@0.6.9-alpha.0":
+  version "0.6.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vulcanjs/react-hooks/-/react-hooks-0.6.9-alpha.0.tgz#e329be21874a42c0b65ecabd128e61c4de1fe7fd"
+  integrity sha512-1vLbdnfzBjvu9t+nFCMlmKJHRup8UCR39d0v18bpuic269heXJG+8xAshuggzmOlc69FBi7B40XFlqi0UoCGFg==
+  dependencies:
+    "@vulcanjs/crud" "^0.6.7"
+    "@vulcanjs/graphql" "^0.6.9-alpha.0"
+    "@vulcanjs/mongo" "^0.6.7"
+    debug "^4.3.1"
+    lodash "^4.17.20"
+    mingo "^3.0.6"
+
 "@vulcanjs/react-hooks@^0.6.7":
   version "0.6.7"
   resolved "https://registry.yarnpkg.com/@vulcanjs/react-hooks/-/react-hooks-0.6.7.tgz#ecc9e996176076c8604c2e7a00eb53542e819aa7"
@@ -5180,12 +5244,33 @@
     lodash "^4.17.20"
     mingo "^3.0.6"
 
+"@vulcanjs/react-hooks@^0.6.9-alpha.1":
+  version "0.6.9-alpha.1"
+  resolved "https://registry.yarnpkg.com/@vulcanjs/react-hooks/-/react-hooks-0.6.9-alpha.1.tgz#563ce6489fd77c87ff825215873bd6529bcabb48"
+  integrity sha512-/dX+zc8gfkIhh7b6L2GiJeYsr6sCqYudeEPSLLLuwhNfGf0b6iIpQTTD92nqL3NIY4CwpR9fst+yjLvY/r5tlg==
+  dependencies:
+    "@vulcanjs/crud" "^0.6.7"
+    "@vulcanjs/graphql" "^0.6.9-alpha.1"
+    "@vulcanjs/mongo" "^0.6.7"
+    debug "^4.3.1"
+    lodash "^4.17.20"
+    mingo "^3.0.6"
+
 "@vulcanjs/react-i18n@^0.6.7":
   version "0.6.7"
   resolved "https://registry.yarnpkg.com/@vulcanjs/react-i18n/-/react-i18n-0.6.7.tgz#7adc553e3999dc805ffbcb02f59f89875d6fcf46"
   integrity sha512-/V/Q3nIFn55fRm+BdD4DdTzUysAPCF3PDMqHppViGXZe1ZJu39U7P8aD08gnJLBYpxA4J9SpkO+rPBypO7WHeA==
   dependencies:
     "@vulcanjs/i18n" "^0.6.7"
+    "@vulcanjs/utils" "^0.6.7"
+    prop-types "^15.7.2"
+
+"@vulcanjs/react-i18n@^0.6.9-alpha.0":
+  version "0.6.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vulcanjs/react-i18n/-/react-i18n-0.6.9-alpha.0.tgz#d4caf2bd61399431e9f7c7d659daa0adae54a0d0"
+  integrity sha512-e4IOZDX2HtKZ00CBNCQKqOPM82eeWhexYajDTBAXEY4tNZfP5fRm+q0Ez+ThryzIKFfxllx133xbFS6fIiy3eQ==
+  dependencies:
+    "@vulcanjs/i18n" "^0.6.9-alpha.0"
     "@vulcanjs/utils" "^0.6.7"
     prop-types "^15.7.2"
 
@@ -5206,18 +5291,18 @@
     debug "^4.3.1"
     lodash "^4.17.21"
 
-"@vulcanjs/react-ui@^0.6.7":
-  version "0.6.7"
-  resolved "https://registry.yarnpkg.com/@vulcanjs/react-ui/-/react-ui-0.6.7.tgz#7da719cb7505b3e639e0d131aae86aa480b7619f"
-  integrity sha512-NVW09kvKNAq//idhhYMe6Mi0Pv6pRu4TW7wqwN8atacwOsVn3sqz1vioqfZxjJvZmg52SyNy63WVl8dswD8A1w==
+"@vulcanjs/react-ui@^0.6.9-alpha.1":
+  version "0.6.9-alpha.1"
+  resolved "https://registry.yarnpkg.com/@vulcanjs/react-ui/-/react-ui-0.6.9-alpha.1.tgz#bacfc81e0009ccc24dc6b88c26c4b27dcb87a871"
+  integrity sha512-/MCB4hq2Rz8L6kGi8NlmoSSD3SPYVHzRiEAZrW76zXqZaWzaB6GJqJkLffbLS3t12uk6Hlyde3t7iWztDlgeBA==
   dependencies:
     "@vulcanjs/core" "^0.6.7"
-    "@vulcanjs/graphql" "^0.6.7"
-    "@vulcanjs/i18n" "^0.6.7"
+    "@vulcanjs/graphql" "^0.6.9-alpha.1"
+    "@vulcanjs/i18n" "^0.6.9-alpha.0"
     "@vulcanjs/model" "^0.6.7"
     "@vulcanjs/permissions" "^0.6.7"
-    "@vulcanjs/react-hooks" "^0.6.7"
-    "@vulcanjs/react-i18n" "^0.6.7"
+    "@vulcanjs/react-hooks" "^0.6.9-alpha.1"
+    "@vulcanjs/react-i18n" "^0.6.9-alpha.0"
     "@vulcanjs/schema" "^0.6.7"
     "@vulcanjs/utils" "^0.6.7"
     classnames "^2.3.1"
