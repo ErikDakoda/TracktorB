@@ -10,7 +10,10 @@ import { Fonts } from "@crema/shared/constants/AppEnums";
 import { grey } from "@mui/material/colors/index";
 import AppTextField from "@crema/core/AppFormComponents/AppTextField";
 import UserFrame from "./UserFrame";
-import { useNavContext } from "@crema/utility/AppContextProvider/NavContextProvider";
+import {
+  useNavActionsContext,
+  useNavContext
+} from "@crema/utility/AppContextProvider/NavContextProvider";
 import NextMuiTextLink from "~/components/ui/NextMuiTextLink";
 
 const validationSchema = yup.object({
@@ -28,7 +31,8 @@ const validationSchema = yup.object({
 });
 
 const Signup = () => {
-  const { submitSignUp, routes } = useNavContext();
+  const { routes } = useNavContext();
+  const { submitSignUp } = useNavActionsContext();
 
   return (
     <UserFrame title={<IntlMessages id="common.signup" />}>

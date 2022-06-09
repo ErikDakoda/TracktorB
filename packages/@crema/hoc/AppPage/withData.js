@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import AppLoader from "@crema/core/AppLoader";
 import { useAuthUser } from "@crema/utility/AuthHooks";
-import { useNavContext } from "@crema/utility/AppContextProvider/NavContextProvider";
+import { useNavActionsContext } from "@crema/utility/AppContextProvider/NavContextProvider";
 
 const withData = (ComposedComponent) => (props) => {
   const { user, isLoading } = useAuthUser();
   const { asPath } = useRouter();
-  const { goLogIn } = useNavContext();
+  const { goLogIn } = useNavActionsContext();
   const queryParams = asPath.split("?")[1];
   useEffect(() => {
     if (!user && !isLoading) {
